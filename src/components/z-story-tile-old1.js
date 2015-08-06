@@ -8,6 +8,7 @@ export class StoryTile{
 		 */
 		  
 	    this.s = {
+			id : '',
    			title:"Take the money and run: A story about two lovers."
 			,summary:"This is a story about jimmy bob and boby sue. They were two young lovers with nothing better to do, than sit around the house and get high and watch tube. This is what happened when they decided to cut loose."
 			,likes:13

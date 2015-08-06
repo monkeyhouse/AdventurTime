@@ -1,6 +1,13 @@
-@import 'common/main';
-@import 'common/buttons';
 
-@import 'common/containers';
+//import modules
+@import 'base/_colors';
+@import 'base/_utility';
 
-@import 'components/storytile';
+// import partials
+@import 'partials/_buttons';
+@import 'partials/_containers';
+@import 'partials/_layouts';
+@import 'partials/_loading';
+@import 'partials/_typography';
+
+

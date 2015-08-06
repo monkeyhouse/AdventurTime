@@ -74,7 +74,7 @@ export class Play {
         if (storyId == null && this.story.title != null) 
             this.title = this.story.title;
 
-        if ( pageId == null || this.pages.length == 0)
+        if ( pageId == null || this.pageId == 0 || this.pages.length == 0)
             return; 
         
         //set page data

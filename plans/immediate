@@ -1,5 +1,30 @@
-get story tiles compoenent to work
+these are actionable things that can be done
 
+short term:
+get story tiles compoenent to work
 story tiles is a list of story tile
 story tile contains subcomponents including tags, and authors
 
+upload database scaffolding into seperate repo
+update it to accomodate new expecattions,
+especially for user tracking features / stats
+
+
+mid term:
+design home page
+style and create marketing content for home page,
+make a plan to make it polished
+components: make the top stories of the week component cards
+
+
+
+later:
+create a discuss forum and figure out how to integrate the comment system with
+a. reviews ( should be 1 thread per story)
+b. editing ( should be 1 forum per story, multiple threads ?)
+
+q: do we need in-ap communication? decide later, forum messaging may be good enough
+
+
+very long term:
+design a badge systesm to encourage / reward the creation of good stories
