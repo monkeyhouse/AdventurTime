@@ -1,0 +1,52 @@
+
+section {
+    margin: 0 20px;
+}
+
+
+/* flex containers */
+.inline-flex{
+  display:inline-flex;
+}
+
+.flex-wrap{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.dumbell-flex-wrap{
+  @extend .flex-wrap;
+  justify-content: space-between;
+  width:100%;
+  
+  div:first-child{
+     margin-left:0;
+  }
+  
+  div:last-child{
+     margin-right:0;
+  }
+}
+
+
+.au-inline-flex-container {
+  display: flex;
+  justify-content:space-between;
+  align-items: stretch;
+}
+
+
+.flex-wrap-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.full-width{
+  width:100%;
+}
+
+.centered{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}

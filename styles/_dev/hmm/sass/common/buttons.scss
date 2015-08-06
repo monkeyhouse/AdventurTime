@@ -1,0 +1,58 @@
+/* button styles */
+.btn
+{
+  &.white-and-transparent{
+    background-color:transparent;
+    color:white;  
+    
+    &:not(.active){
+     background-color:transparent;
+     color:white;    
+    }
+    
+    &.btn-primary.active{
+      color: orange;
+    }
+  }
+
+  &.no-border{
+    border:none;
+  }
+    
+  &.hover-button{
+     opacity:.5;
+  }
+
+  &.hover-button:hover{
+   opacity:1;
+  }  
+}
+
+/* typegraphy */
+.muted {
+  color: rgba(black, 0.5);
+}
+
+/* flex containers */
+.inline-flex{
+  display:inline-flex;
+}
+
+.flex-wrap{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.dumbell-flex-wrap{
+  @extend .flex-wrap;
+  justify-content: space-between;
+  width:100%;
+  
+  div:first-child{
+     margin-left:0;
+  }
+  
+  div:last-child{
+     margin-right:0;
+  }
+}

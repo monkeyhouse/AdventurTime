@@ -1,0 +1,29 @@
+/* button styles */
+.btn
+{
+  &.white-and-transparent{
+    background-color:transparent;
+    color:white;  
+    
+    &:not(.active){
+     background-color:transparent;
+     color:white;    
+    }
+    
+    &.btn-primary.active{
+      color: orange;
+    }
+  }
+
+  &.no-border{
+    border:none;
+  }
+    
+  &.hover-button{
+     opacity:.5;
+  }
+
+  &.hover-button:hover{
+   opacity:1;
+  }  
+}

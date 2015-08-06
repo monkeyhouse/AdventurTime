@@ -1,0 +1,60 @@
+[
+  {
+    'repeat:10': {
+      id: '{{guid()}}',
+      index : '{{index()}}',
+      title: '{{lorem(8, "words")}}',
+      summary: '{{lorem(1,"paragraphs")}}',
+      
+      picture: 'http://placehold.it/64x64',
+     
+      //metadata
+      created: '{{date(new Date(2014, 0, 1), new Date())}}',
+      published : '{{date(new Date(2014, 0, 1), new Date())}}',
+           
+           
+      likes : '{{integer(1,50)}}',
+      views : '{{integer(60,100)}}',
+      comments : '{{integer(1,30)}}',
+      
+      pages : '{{integer(20,80)}}',
+      endings : '{{integer(3,10)}}',
+     
+      tags: [
+        {'repeat:4': {
+             id : '{{integer(1000,10000)}}',
+             text:'{{lorem(1, "words")}}'
+          }
+        }
+      ],
+    
+      
+      
+      authors: [   //top n authors
+        {
+          'repeat:5': {
+            id: '{{integer(1000,10000)}}',
+            name: '{{firstName()}} {{surname()}}',
+            icon: 'http://placehold.it/32x32',
+            rank : '{{index()}}'
+          }
+        }
+      ],
+      authorCount : '{{integer(5,10)}}'
+      
+
+ 
+      
+    }
+    
+    // future developemnet : secondary stats 
+    //plays : '{{integer(20,60)}}',
+    //completions : '{{integer(20,40)}}',
+    // cptd stat (cpt vw??)
+    //playsPerUser : '{{integer(1,5)}}',
+    //completionsPerUser : '{{integer(1,5)}}',
+
+
+    
+  }
+]

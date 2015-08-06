@@ -1,0 +1,11 @@
+
+<template>    
+    
+    <div class="container">
+
+    <p>story tiles is rendered</p>
+    <section class="story-tiles" repeat.for="story of stories">
+        <compose view="tiles/story-tile.html" view-model.bind="story" >
+    </section> 
+    
+  </template>

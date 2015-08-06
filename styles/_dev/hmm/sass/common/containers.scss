@@ -1,0 +1,41 @@
+
+/* story / flex containers */
+.tag-container{
+  @extend .flex-wrap;
+  align-content: flex-start;
+  margin: .2em;
+}
+
+.tag{
+   background-color: transparent;
+   border: 1px solid gainsboro;
+   padding: .1em .4em;
+   align-self: flex-start;
+   margin: 0 .15em .15em 0;
+   border-radius: .2em;
+   
+   &:hover{
+     background-color: whitesmoke;
+   }
+}
+
+.user-icon-container{
+  @extend .inline-flex;  
+  justify-content: flex-end;
+  margin: .2em;
+  
+  user-icon, .user-icon{
+    margin: .2em; 
+    a{
+      margin : 0;
+    }
+  }
+}
+
+.rating-container{
+  @extend .inline-flex;
+  
+  span {
+    margin:.2em .5em;
+  }
+}

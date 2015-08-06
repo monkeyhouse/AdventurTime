@@ -1,0 +1,17 @@
+
+/* typegraphy */
+.muted {
+  color: rgba(black, 0.5);
+}
+
+
+
+$linkColor : lighten(black, 30);
+body a {
+  color: $linkColor;
+  &:hover{
+    text-decoration: none;
+    color: darken($linkColor, 20);
+    opacity: 1;
+  }
+}

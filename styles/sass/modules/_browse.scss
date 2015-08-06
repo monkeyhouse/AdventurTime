@@ -1,0 +1,36 @@
+story-tile{
+	
+  .title{
+    font-size:18px;
+    margin:0;
+    margin-bottom:5px;
+  }
+
+}
+
+
+
+/* story summary items  */
+.story-list-item h2 {
+  margin:.2em 0;
+}
+
+.sp.statistic{
+  color:black;
+  margin-bottom:1em;
+}
+
+.sp.statistic .value{
+  text-align:center;
+  color:black;
+  display:block;
+  font-size:3em;
+  line-height:1em;
+}
+.sp.statistic .label{
+  text-align:center;
+  color:black;
+  display:block;
+  font-size:1em;
+  line-height:1.2em;  
+}

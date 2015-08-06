@@ -1,0 +1,46 @@
+
+<template>    
+<section class="story-list-item">
+    
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-1">
+        
+           
+      
+            
+    </div>
+    <div class="col-xs-12 col-md-9">
+        
+        <div class="dumbell-flex-wrap">
+            <div class="title"><a href.bind="'#/read/' + id" >${title}</a></div>
+            <div class="pull-right rating-container">
+                <span><a href="#">${likes}<i class="fa fa-arrow-up"></i></a></span>
+                <span><a href="#">${views}<i class="fa fa-eye"></i></a></span>                    
+                <span><a href="#">${comments}<i class="fa fa-comment-o"></i></a></span>
+            </div>
+        </div>
+        
+        <p>${summary}</p>
+
+        <div class="dumbell-flex-wrap">
+
+            <div class="tag-container">
+                <a repeat.for="t of tags" class="tag" href.one-time="t.id">
+                    ${t.text}
+                </a>
+            </div>
+            
+            <div>
+                <div class="muted">published on 10.21.2015 </div>
+                <div class="user-icon-container">
+                <div repeat.for="users of authors">                    
+                   <compose view="tiles/user-tile.html" view-model.bind="user" >
+                </div>
+            </div>
+        </div>
+
+
+</div>
+
+</section>    
+</template>

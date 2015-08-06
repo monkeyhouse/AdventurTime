@@ -1,0 +1,22 @@
+/* layout */
+.reading-container{
+
+   padding: 10px 20px;
+   
+   margin-top: 30px;
+
+
+  h2{
+     margin-top:0;
+  }
+
+ .reading-content{
+    display: inline-flex;  
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+  
+ }
+ 
+
+}
