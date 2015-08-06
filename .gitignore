@@ -3,10 +3,9 @@ jspm_packages
 bower_components
 .idea
 .DS_STORE
-/dist
+dist/
 build/reports
-/starter_src
+starter_src/
 CONTRIBUTING.md
-LICENSE
-README
+LICENSE.txt
 styles/css/
