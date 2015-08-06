@@ -1,5 +1,7 @@
 
 <template>
+    
+<require from="./tiny-templates.js"></require>
 <section class="story-list-item">
     
     <!--s in stories-->
@@ -15,9 +17,9 @@
             <div class="dumbell-flex-wrap">
                 <div><h3 class="" style="margin-top:0"><a href="#/write-router/create">${s.title}</a></h3></div>
                 <div class="pull-right rating-container">
-                    <span><a href="#">10<i class="fa fa-comment-o"></i></a></span>
-                    <span><a href="#">1<i class="fa fa-arrow-up"></i></a></span>
-                    <span><a href="#">60<i class="fa fa-eye"></i></a></span>                    
+                    <span><a href="#">${s.comments}<i class="fa fa-comment-o"></i></a></span>
+                    <span><a href="#">${s.likes}<i class="fa fa-arrow-up"></i></a></span>
+                    <span><a href="#">${s.views}<i class="fa fa-eye"></i></a></span>                    
                     <!-- fa-arrow-up -->
                 </div>
             </div>
@@ -38,24 +40,22 @@
                     <div class="user-icon-container">
                         <!--If one author-->
                         <!--<span class="story-author">Created by <a>Jimmey Cricket</a><span> -->
-                        <!--author-->
-                        <a class="user-icon" title.bind="s.author.name">
-                            <img src="http://www.gravatar.com/avatar/?s=30&d=mm"/>
-                        </a>    
-                        <!-- top 5 authors or random from top 10 -->
-    
-                        <a class="user-icon" repeat.for="u of s.contributors" title.bind="u.name" href="#fxn(u_id)">
-                            <img src="http://www.gravatar.com/avatar/?s=30&d=mm"/>
-                        </a>
-               
+                        <!--author-->                                                
+                        <user-icon class="user-icon" name.bind="s.author.name" gravitar.bind="s.author.gravitar" id.bind="a.author.id"></user-icon>
                         
+                        <!-- top 5 authors or random from top 10 -->
+                        <user-icon repeat.for="u of s.contributors" class="user-icon" name.one-time="u.name" gravitar.one-time="u.gravitar" id.one-time="u.id"></user-icon>
+   
                         <!-- overlay + 43 others, link to conrubutors page -->
                         <!-- community icon? or plus sign -->
-                        <a class="user-icon"  title="and 44 other contributors"  >
-                            <img src="http://www.gravatar.com/avatar/?s=30&d=mm"/>
-                            <!-- image for number +43 -->
-                        </a>    
-    
+                        <div class="user-icon muted">
+                            <a href="#/story/id/contributions" title="and 43 other contributors">
+                                <span class="fa-stack fa-lg">
+                                  <i class="fa fa-square-o fa-stack-2x"></i>
+                                  <i class="fa fa-user-plus fa-stack-1x"></i>
+                                </span>
+                             </a>
+                         </div>
                     </div>
                 </div>
             </div>

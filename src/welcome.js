@@ -1,13 +1,4 @@
 export class Welcome{
-    heading = 'Welcome to the Aurelia Navigation App!';
-    firstName = 'John';
-    lastName = 'Doe';
+    heading = 'Welcome to the Story Time Adventures Community Edition';
 
-    get fullName(){
-        return `${this.firstName} ${this.lastName}`;
-    }
-
-    welcome(){
-        alert(`Welcome, ${this.fullName}!`);
-    }
 }

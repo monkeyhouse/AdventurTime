@@ -77,8 +77,11 @@
   justify-content: flex-end;
   margin: .2em;
   
-  .user-icon{
-    margin: .2em;
+  user-icon{
+    margin: .2em; 
+    a{
+      margin : 0;
+    }
   }
 }
 

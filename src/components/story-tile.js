@@ -1,7 +1,3 @@
-// import {inject} from 'aurelia-framework';  
-// import $ from 'jquery';
-
-/* want inline view templates for links */
 
 export class StoryTile{	
 	  constructor() {
@@ -15,7 +11,8 @@ export class StoryTile{
    			title:"Take the money and run: A story about two lovers."
 			,summary:"This is a story about jimmy bob and boby sue. They were two young lovers with nothing better to do, than sit around the house and get high and watch tube. This is what happened when they decided to cut loose."
 			,likes:13
-			,comments:23			
+			,comments:23	
+			,views:80		
 			
 			//quick read
 			//average read
@@ -60,7 +57,6 @@ export class StoryTile{
 			,created: new Date()
 			
 			,published:new Date()
-			,views:80
 			,completions: 10
 			//http://www.gravatar.com/avatar/ + slug + ?d=mm
 			// last modified : ?

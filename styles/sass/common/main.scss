@@ -266,12 +266,12 @@ $bottomToolbarMinHeight : 50px;
 }
 
 
-$linkColor : lighten(black, 30);
+$linkColor : darken(grey,5);
 body a {
   color: $linkColor;
   &:hover{
     text-decoration: none;
-    color: darken($linkColor, 20);
+    color: darken($linkColor, 30);
     opacity: 1;
   }
 }
