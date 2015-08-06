@@ -1,0 +1,64 @@
+<template>
+    <section>
+        <h2>${heading}</h2>
+        <div class="row">
+            <div class="col-sm-6 col-md-3" repeat.for="image of images">
+                <a class="thumbnail">
+                    <img style="width: 260px; height: 180px;" src.bind="image.media.m" />
+                </a>
+            </div>
+        </div>
+        <pre>
+            Reccomended
+            
+            Please rate these if you have completed them
+            list of top 5 they have not completed
+            
+            ----
+            exclude ones that have been commented on or rated or completed more than twice           
+        </pre>
+        <pre>
+            Completed            
+            List of ones they have completed and reached an ending on
+        </pre>
+        <pre>
+            Favorites : ones that you star
+        </pre>
+    
+        <pre>
+            Search
+            
+            . main search
+            searches title, summary, tags
+                       
+              
+            Sort by
+            .fxn(# likes, #date, #completions )
+            
+            advanced options            
+            all these words:
+            title: [text]
+            summary : [text]
+            tags : (pick)
+            
+            filter by
+            . Tags
+            
+            Stats
+            . Views            
+            . # Pages
+            . # Endings
+            
+            Popularity
+            . # Completions >  1 
+            . # Likes > 1
+            . # Playthroughs > 1
+            . # Views > 100
+            
+            Contributors
+            . created by :
+            . contrubutions by :
+            
+         </pre>
+    </section>
+</template>

@@ -1,0 +1,17 @@
+<template>
+    <div class="container">
+        <br>
+    <div>
+      <ul class="nav nav-tabs">
+          <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">                       
+             <a href.bind="row.href">${row.title}</a>
+           </li>      
+     
+    </div>
+
+     <div class="row" style="padding: 0">
+            <router-view></router-view>
+     </div>
+</container>
+            
+</template>

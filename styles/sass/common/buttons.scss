@@ -1,0 +1,91 @@
+/* button styles */
+.btn
+{
+  &.white-and-transparent{
+    background-color:transparent;
+    color:white;  
+    
+    &:not(.active){
+     background-color:transparent;
+     color:white;    
+    }
+    
+    &.btn-primary.active{
+      color: orange;
+    }
+  }
+
+  &.no-border{
+    border:none;
+  }
+    
+  &.hover-button{
+     opacity:.5;
+  }
+
+  &.hover-button:hover{
+   opacity:1;
+  }  
+}
+
+/* typegraphy */
+.muted {
+  color: rgba(black, 0.5);
+}
+
+/* flex containers */
+.inline-flex{
+  display:inline-flex;
+}
+
+.flex-wrap{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.dumbell-flex-wrap{
+  @extend .flex-wrap;
+  justify-content: space-between;
+  width:100%;
+  
+  div:first-child{
+     margin-left:0;
+  }
+  
+  div:last-child{
+     margin-right:0;
+  }
+}
+
+/* story / flex containers */
+.tag-container{
+  @extend .flex-wrap;
+  align-content: flex-start;
+  margin: .2em;
+}
+
+.tag{
+   background-color: hsla(0,0%,0%,.14);
+   padding: .1em .4em;
+   align-self: flex-start;
+   margin: 0 .15em .15em 0;
+   border-radius: .2em;
+}
+
+.user-icon-container{
+  @extend .inline-flex;  
+  justify-content: flex-end;
+  margin: .2em;
+  
+  .user-icon{
+    margin: .2em;
+  }
+}
+
+.rating-container{
+  @extend .inline-flex;
+  
+  span {
+    margin:.2em .5em;
+  }
+}

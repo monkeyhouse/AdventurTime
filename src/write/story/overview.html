@@ -1,0 +1,51 @@
+<template>
+
+<section  class="container" style="position:relative; padding:.5em 1em; width: 100%">
+
+    <table class="table">
+    <tr>
+    <th class="col-xs-1">Page #</th>
+    <th class="col-xs-9">Text</th>
+    <th class="col-xs-2">Actions (hover = cursor icon)</th>
+    <th class="col-xs-1"></th>
+    </tr>
+    <tbody>
+        <tr repeat.for="page of pages" >
+            <td>Page ${page.id}</td>
+            <td>${page.body}</td>            
+            <td> 
+              <div class="btn-group">
+                <span repeat.for="action of page.actions">
+                    <button type="button" class="btn btn-default hover-button no-border" title="${action.body}">${action.pageId}</button>
+                </span>
+            </td>            
+            
+            <!--edit page-->
+            <td>
+                <button type="button" click.delegate="$parent.editPage(page)" if.bind="a.pageId != 0" class="btn btn-default no-border" title="edit page">
+                    <i class="fa fa-edit"></i>
+               </button>
+            </td>
+        </tr>
+    </tbody>
+    
+    
+    </table>
+    </section>
+
+    <footer  class="fixed bottom-overlay">
+
+    <div if.bind="showPageEditor">
+
+        <require from="./edit"></require>
+        <edit pages.bind="pages" page.bind="selectedPage" show-editor.two-way="showPageEditor"></edit>
+    </div>
+
+    <div if.bind="!showPageEditor">
+        Select a page to edit
+    </div>
+    </section>
+
+   
+    
+</template>

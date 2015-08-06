@@ -1,0 +1,50 @@
+<template>
+  
+  <br>
+    
+   <section >
+    
+   <div class="container-fluid">
+     
+       <ul class="nav nav-tabs">
+          <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">                       
+             <a href.bind="row.href">${row.title}</a>
+           </li>
+          
+          <li> 
+                  
+            <form class="form-inline pull-right" role="search">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search stories...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                  </span>
+                </div>  
+                
+                              
+              <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> All
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Collabs
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Mine
+              </label>
+                
+                          <!--All / Collabs / Mine-->
+      
+            </form>
+      </li>
+       </ul>
+
+     
+     <div class="row" style="padding: 0">
+        <router-view></router-view>
+     </div>
+
+</div>
+    
+      
+  </section>
+</template>

@@ -1,0 +1,32 @@
+﻿[
+  {
+    "id" : 1,
+    "title": "asdf",
+    "summary": "Once upon a time, in a galaxy far away... A rough man says its all tied together. He says you should go downtown and ask around. He says he knows a guy behind Geno's Pizzaria and he'll come with you to make the introduction. You brush by him and walk up to a convenience store.",
+    "setting": "",
+    "genres" : [  { "id": "1", "text" : ""}, { "id": "1", "text" : ""}, { "id": "1", "text" : ""} ],
+    "createdby" : "",
+    "modifiedby" : "",
+  },
+    {
+    "id" : 2,
+    "title": "asdf",
+    "summary": "Once upon a time, in a galaxy far away... A rough man says its all tied together. He says you should go downtown and ask around. He says he knows a guy behind Geno's Pizzaria and he'll come with you to make the introduction. You brush by him and walk up to a convenience store.",
+    "setting": "",
+    "genres" : [  { "id": "1", "text" : ""}, { "id": "1", "text" : ""}, { "id": "1", "text" : ""} ]
+  },
+  {
+    "id" : 3,
+    "title": "asdf",
+    "summary": "Once upon a time, in a galaxy far away... A rough man says its all tied together. He says you should go downtown and ask around. He says he knows a guy behind Geno's Pizzaria and he'll come with you to make the introduction. You brush by him and walk up to a convenience store.",
+    "setting": "",
+    "genres" : [  { "id": "1", "text" : ""}, { "id": "1", "text" : ""}, { "id": "1", "text" : ""} ]
+  },
+  {
+    "id" : 4,
+    "title": "asdf",
+    "summary": "Once upon a time, in a galaxy far away... A rough man says its all tied together. He says you should go downtown and ask around. He says he knows a guy behind Geno's Pizzaria and he'll come with you to make the introduction. You brush by him and walk up to a convenience store.",
+    "setting": "",
+    "genres" : [  { "id": "1", "text" : ""}, { "id": "1", "text" : ""}, { "id": "1", "text" : ""} ]
+  }
+]

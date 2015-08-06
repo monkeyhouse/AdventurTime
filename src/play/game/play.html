@@ -1,0 +1,70 @@
+<link type="text/stylesheet" rel="stylesheet" href="/styles/css/game.css" >
+<template> 
+    
+    <section>
+        
+      
+      <div class="container reading-container" css="${styles.margin}">
+          
+          <!-- cover page -->
+         <div class="row" if.bind="pageId == 0">
+             
+             <div class="col-xs-12 text-center">
+             <h1> ${story.title} </h1>
+             <p> There should be a summary here </p>
+             
+             <button class="btn btn-primary btn-lg " click.trigger="$parent.goToPageOne()">Play</button>
+             </div>
+         </div>
+         <!-- normal page-->
+         <div if.bind="pageId != 0">
+             <div class="row">
+                 <header class="col-xs-12">
+                    <h2><small>${story.title}</small></h2>
+                  
+                </header>
+             </div>
+            <section class="reading-content">
+                <div class="row">
+                    <p css="${styles.fontFamily} ${styles.fontSize} ${styles.lineHeight}">${body}</p>   
+                </div>         
+                <nav>
+                    <div class="row" style="display:flex; align-items:stretch; flex-wrap:wrap; margin-top:10px" >
+               
+                      <div class=" col-xs-12 col-md-6" style="display:flex; align-items:stretch; padding:0; margin-right:-2px;" repeat.for="a of actions" >
+                        <button class="btn btn-default themed-button " style="white-space:normal; margin: .2em .2em 0 0; width:calc(100% - 1em)" 
+                            click.trigger="$parent.navToPage(a.pageId)">
+                            <span css="${$parent.styles.fontFamily} ${$parent.styles.fontSize}">
+                            ${a.body}
+                            </span>                         
+                        </button>
+                      </div>
+                 
+                    </div>
+                </nav>
+           </section>
+            <footer style="margin-top:20px">
+              <small class="soft pull-right">${page}</small>
+            </footer>
+        </div>
+
+    </section>
+      
+    
+    <div style="position:fixed; left:0; bottom:0; margin:10px;">
+        <button class="btn btn-default btn-large themed-button" click.trigger="cycleTheme()">Change Theme </button>
+        
+     <require from="./../../components/overlay"></require>
+     <require from="./text-styles" ></require>  
+     
+     <overlay>
+        <overlay-trigger> <button class="btn btn-default btn-large themed-button">Change Font </button></overlay-trigger>
+        <overlay-content> 
+            
+           
+          <text-styles styles.two-way="styles"></text-styles>
+         </overlay-content>
+     </overlay>
+ 
+     </div>
+</template>

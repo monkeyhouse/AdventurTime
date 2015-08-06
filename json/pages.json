@@ -1,0 +1,71 @@
+﻿[
+  {
+    "id": 1,
+    "body": "Once upon a time, in a galaxy far away... A rough man says its all tied together. He says you should go downtown and ask around. He says he knows a guy behind Geno's Pizzaria and he'll come with you to make the introduction. You brush by him and walk up to a convenience store.",
+    "actions": [
+      {
+        "id": "1",
+        "body": "Open the door",
+        "pageId": "2"
+      },
+      {
+        "id": "2",
+        "body": "Go downtown to the abandoned car lot to search for clues. This is some more text that makes it wrap.",
+        "pageId": "4"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "body": "The door creaks open and you find a man with a meancing grin hunched over a computer behind a counter in the back. You fade into the background quietly watching. You sneak to the side for a better view and notice the message on his phone. It says '...",
+    "actions": [ 
+      {
+        "id": "4",
+        "body": "Punch him in the stomach and knock some sense into his head",
+        "pageId": 0
+      },
+      {
+        "id": "5",
+        "body": "Walk behind his chair and finger his pockets for keys",
+        "pageId": 0
+      }
+    ]
+  },
+    {
+    "id": 3,
+    "body": "You get in your car and start it to up to make the trip to the rundown uptownp plaza. It grunts and backfires as it starts up. These detective salaries stopped paying so much once the thugs took over the city. Instead of invesing more, they invsted less. You're suit is so run down it looks like like you work at a mom and pop bank. Cheap bastards. You pass by the allmart and then drive into the food desert ahead. Your engine makes a popping sound and the car slows to a halt next to a lowrider with extra thin rims. A toned muscle man in shades lowers them and waves and says 'Hey hombre, you boys looking for something?' He grins revelaing two silver teeth and and three missing ones.",
+    "actions": [ 
+      {
+        "id": "7",
+        "body": "Tell him that your're not from here, your car's broke down and you need a lift. Make it sympathetic",
+        "pageId": 0
+      },
+      {
+        "id": "8",
+        "body": "Say you've pullod over 'cause waiting for your girlfriend and shes getting ready. You're one of the family.",
+        "pageId": 0
+      },
+       {
+        "id": "9",
+        "body": "Put on your gun and badge and take charge. Put on your siren, call in some backup and instruct him to pull over for suspicion of vehicle theft.",
+        "pageId": 0
+      }
+    ]
+  },
+   {
+    "id": 4,
+    "body": "You pull back to take a swing and your elbow shatters a vase. The target stands up startled and says 'What are you doing here? Who let you in' You reply",
+    "actions": [ 
+      {
+        "id": "10",
+        "body": "With a sucker punch to the stomach.",
+        "pageId": 0
+      },
+      {
+        "id": "11",
+        "body": "Pretend you're a cop and arrest the man. Use zipties from your back pocket to take him to the car.",
+        "pageId": "3"
+      }
+    ]
+   }
+]

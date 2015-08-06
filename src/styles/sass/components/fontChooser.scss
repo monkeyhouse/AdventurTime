@@ -1,0 +1,32 @@
+
+/* font chooser */ 
+.font-chooser-group{
+  display: flex; align-items:stretch;
+  flex-wrap:wrap;
+  justify-content: center;
+
+  label{
+    margin:5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  label.font-size{
+    width:12%;
+    max-width:200px;
+    min-width:80px;
+  }
+  
+  label.font-family{
+    max-width:160px;
+  }
+
+  label.line-height{ 
+    font-size:.9em;
+    max-width:200px;
+  }
+}
+
+   
+    

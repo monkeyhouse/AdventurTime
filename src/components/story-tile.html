@@ -1,0 +1,67 @@
+
+<template>
+<section class="story-list-item">
+    
+    <!--s in stories-->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-1">
+        
+           
+      
+                
+        </div>
+        <div class="col-xs-12 col-md-9">
+            
+            <div class="dumbell-flex-wrap">
+                <div><h3 class="" style="margin-top:0"><a href="#/write-router/create">${s.title}</a></h3></div>
+                <div class="pull-right rating-container">
+                    <span><a href="#">10<i class="fa fa-comment-o"></i></a></span>
+                    <span><a href="#">1<i class="fa fa-arrow-up"></i></a></span>
+                    <span><a href="#">60<i class="fa fa-eye"></i></a></span>                    
+                    <!-- fa-arrow-up -->
+                </div>
+            </div>
+            
+            <p>${s.summary}       
+            </p>
+    
+            <div class="dumbell-flex-wrap">
+    
+                <div class="tag-container">
+                    <a repeat.for="t of s.tags" class="tag" href.bind="t.id">
+                        ${t.text}
+                    </a>
+                </div>
+                
+                <div>
+                    <div class="muted">published on 10.21.2015 </div>
+                    <div class="user-icon-container">
+                        <!--If one author-->
+                        <!--<span class="story-author">Created by <a>Jimmey Cricket</a><span> -->
+                        <!--author-->
+                        <a class="user-icon" title.bind="s.author.name">
+                            <img src="http://www.gravatar.com/avatar/?s=30&d=mm"/>
+                        </a>    
+                        <!-- top 5 authors or random from top 10 -->
+    
+                        <a class="user-icon" repeat.for="u of s.contributors" title.bind="u.name" href="#fxn(u_id)">
+                            <img src="http://www.gravatar.com/avatar/?s=30&d=mm"/>
+                        </a>
+               
+                        
+                        <!-- overlay + 43 others, link to conrubutors page -->
+                        <!-- community icon? or plus sign -->
+                        <a class="user-icon"  title="and 44 other contributors"  >
+                            <img src="http://www.gravatar.com/avatar/?s=30&d=mm"/>
+                            <!-- image for number +43 -->
+                        </a>    
+    
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+
+  </section>    
+  </template>

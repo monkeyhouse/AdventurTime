@@ -1,0 +1,62 @@
+<template>
+
+    <section>
+
+        <form role="form" submit.delegate="save()">
+            <!-- Story -->
+            <!-- Title Card -->
+            <div class="row">
+
+                <!-- Title Card -->
+
+                <div class="col-sm-6 col-md-5">
+
+                    <h3>Synopsis</h3>
+                    <div class="form-group">
+                        <label for="Stitle">Title</label>
+                        <input type="text" value.bind="title" class="form-control" id="Stitle" placeholder="Gulliver's Travels">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="summary">Summary</label>
+                        <textarea value.bind="summary" class="form-control" rows="4" id="summary" placeholder="What would a book jacket say?"></textarea>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="setting">Setting(s)</label>
+                        <textarea value.bind="setting" class="form-control" rows="3" id="setting" placeholder="Where or when does your story take place?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genres">Genre(s)</label>
+                        <input type="text" value.bind="genres" class="form-control" id="genres" placeholder="Genre Tags">
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-7">
+
+                    <h3>Beginning</h3>
+                    <div class="form-group">
+                        <label for="setting">Page 1</label>
+                        <textarea value.bind="page1" class="form-control" rows="14" id="setting" placeholder="I hope you will be ready to own publicly, whenever you shall be called to it, that by your great and frequent urgency you prevailed on me to publish a very loose and uncorrect account of my travels, with directions to hire some young gentleman of either university to put them in order, and correct the style, as my cousin Dampier did, by my advice, in his book called �A Voyage round the world.�  But I do not remember I gave you power to consent that any thing should be omitted, and much less that any thing should be inserted; therefore, as to the latter, I do here renounce every thing of that kind; particularly a paragraph about her majesty Queen Anne, of most pious and glorious memory; although I did reverence and esteem her more than any of human species. "></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-default btn-lg btn-block">Create</button>
+                </div>
+
+
+            </div>
+
+            <!--<div class="row">
+                <div class="col-sm-offset-6 col-md-offset-5 col-sm-3">
+                   
+                </div>
+            </div>-->
+
+
+
+        </form>
+
+    </section>
+</template>

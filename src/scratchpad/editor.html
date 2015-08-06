@@ -1,0 +1,15 @@
+<template>
+    <h2>Page Editor</h2>
+                         
+     <div if.bind="expandIt">
+         Editor - Editor Is Showing
+     </div>
+     
+     <div if.bind="!expandIt">
+         Editor - Editor Is Hidden
+     </div>
+     
+     <button click.trigger="collapse()">Collapse</button>
+
+
+</template>

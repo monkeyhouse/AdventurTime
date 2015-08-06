@@ -1,0 +1,92 @@
+<template>
+
+ <!--require select-->
+ <!--<require from ='./../components/my-select' ></require>-->
+ 
+         
+   
+     
+    <form role="form" submit.delegate="save()" ref="elPageSection" >
+    
+            <div class="col-sm-12 col-md-12"> 
+               
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                    
+                     <label for="${page.id}"><h4 class="no-margin">${heading} - Page ${page.id} </h4> </label>
+                    
+                    </div>
+                    <div class="col-xs-12 col-sm-6">                        
+                    
+                        <button type="button" click.delegate="createAction()"  class="btn btn-default white-and-transparent" title="add action">+ Action</button>
+  
+                    
+                        <button type="button" class="btn btn-default pull-right white-and-transparent" click.delegate="hideEditor()" title="close"><i class="fa fa-close"></i></button>
+                    
+                    
+                    </div>
+                    
+                    
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <!-- Page -->
+                        <div class="form-group">
+                            <textarea class="form-control" rows="15" id="${page.id}" value.bind="page.body"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">                        
+                        <!-- Actions -->
+                            <div class="row" repeat.for="a of page.actions">
+                            
+                                
+                                <div class="col-xs-9">
+                                    <div class="form-group">
+                                        <textarea rows="3" class="form-control" id="${a.id}" value.bind="a.body"></textarea>
+                                    </div>
+                                </div>
+
+                        <div class="col-xs-3">
+                            
+                        <div class="btn-group btn-group-justified " role="group" >
+                                <!-- if not linked -->
+                            <div class="btn-group" role="group">
+                                <button type="button" click.delegate="$parent.deleteAction(a)"" class="btn btn-default" title="remove option"><i class="fa fa-remove"></i></button>
+                            </div>
+                                <!-- click to change link -->
+                               <!--<button type="button" class="btn btn-default" title="${a.pageId == 0 ? 'create link to page' : 'change link to page'}"><i class="fa fa-link"></i></button>-->
+                            <div class="btn-group" role="group">
+                                
+                                <!-- go to next -->
+                                <button type="button" click.delegate="$parent.getNextPage(a)" if.bind="a.pageId != 0" class="btn btn-default" title="go to linked page"><i class="fa fa-arrow-right"></i></button>
+
+                                <!-- create next page -->
+                                <button type="button" click.delegate="$parent.createNextPage(a)" if.bind="a.pageId == 0" class="btn btn-default" title="create next page"><i class="fa fa-plus"></i></button>
+                            </div>
+                        
+                        </div>
+                        
+                            
+                        <div class="page-select-input">       
+                            <span class="label">Page</span>                        
+                                <select class="value" value.two-way="a.pageId" >
+                                <option value="0"></option>
+                                <option repeat.for="p of $parent.pages" value="${p.id}">${p.id}</option>
+                            </select>                              
+                        </div>
+
+
+                      </div>
+                        
+                         </div>
+                               
+                     
+                    </div>
+                    
+                </div>
+            
+           </div>
+
+    </form>
+
+</template>
