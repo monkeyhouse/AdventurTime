@@ -16,8 +16,8 @@
        <!--Font sizes-->
         <h3> Font Size <h3>
         <div class="font-chooser-group fonts" >                 
-            <label class="btn btn-default white-and-transparent font-size ${$parent.styles.fontSize ==  f ? 'active' : ''}" 
-                   repeat.for="f of fontSizes" css="${f}" click.trigger="$parent.styles.fontSize = f">
+            <label class="btn btn-default white-and-transparent font-size font-demo ${f} ${$parent.styles.fontSize ==  f ? 'active' : ''}" 
+                   repeat.for="f of fontSizes" click.trigger="$parent.setFontSize(f)">
                    <span style="line-height:1em"> Aa </span>
             </label>
         </div>
@@ -27,9 +27,9 @@
        <!--Font Family-->
        <h3> Font Family <h3>
        <div class="font-chooser-group">                 
-            <label class="btn btn-default white-and-transparent font-family btn-lg ${$parent.styles.fontFamily ==  f.value ? 'active' : ''}" repeat.for="f of fontFamilies"
-                  click.delegate="$parent.styles.fontFamily = f.value" css="${f.value}" >          
-              ${f.name}
+            <label repeat.for="f of fontFamilies" class="btn btn-default white-and-transparent font-family btn-lg font-demo ${f.value} ${$parent.styles.fontFamily ==  f.value ? 'active' : ''}" 
+                  click.delegate="$parent.setFontFamily(f)" >      
+             ${f.name}
             </label>
         </div>
        
@@ -37,8 +37,8 @@
        <!-- Line Spacing-->
       <h3> Line Spacing </h3>
        <div class="font-chooser-group">                 
-        <label class="btn btn-default  white-and-transparent line-height ${$parent.styles.lineHeight == f ? 'active' : ''}" repeat.for="f of lineHeights" css="${f}"
-                click.trigger="$parent.styles.lineHeight = f" >
+        <label repeat.for="f of lineHeights"  class="btn btn-default  white-and-transparent line-height font-demo ${f} ${$parent.styles.lineHeight == f ? 'active' : ''}" 
+                click.delegate="$parent.setLineHeight(f)" >
                Lorem ipsum dolor sit </br> consectetur adipi elit
         </label>
        </div>
@@ -47,8 +47,8 @@
        <!--Margins -->
        <h3> Page Margins </h3>
        <div class="font-chooser-group">                 
-         <label class="btn btn-default  btn-lg white-and-transparent ${$parent.styles.margin == m.value ? 'active' : ''}" repeat.for="m of margins" style="min-width:150px;"
-                click.trigger="$parent.styles.margin = m.value" >
+         <label repeat.for="m of margins"" class="btn btn-default  btn-lg white-and-transparent font-demo ${f} ${$parent.styles.margin == m.value ? 'active' : ''}" style="min-width:150px;"
+                click.delegate="$parent.setMargin(m)" >
            ${m.name}
         </label>
        </div>

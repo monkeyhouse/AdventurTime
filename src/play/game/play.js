@@ -1,19 +1,16 @@
 import {inject} from 'aurelia-framework';
-// import {HttpClient} from 'aurelia-http-client';
 import {Router} from 'aurelia-router';
-import $ from 'jquery';
-import _ from 'lodash';
 import {GameState} from './gameState';
 import {GameThemes} from './gameThemes';
 import {GameStyles} from './gameStyles';
+import $ from 'jquery';
+import _ from 'lodash';
 
 
-import {json} from './valueConverters';
-
-@inject(Router, GameState, GameStyles, GameThemes) /* HttpClient, Router,  */
+@inject(Router, GameState, GameStyles, GameThemes) 
 export class Play {
 
-    constructor(router, state, styleAdapter, themeAdapter){ /* http, router,  */
+    constructor(router, state, styleAdapter, themeAdapter){ 
                      
         this.router = router;        
         this.themeAdapter = themeAdapter;
@@ -28,45 +25,14 @@ export class Play {
 
 
     }
-    
-
-    
+        
     activate(params){        
         console.log('activated');        
         this.storyId = 1;
-        this.pageId = 0;        
-    
-        //reapply theme, styles after navigation & reactivate      
-        return this.styleAdapter.loadStyles().then( response => {
-           this.styles = response;
-           this.themeAdapter.applyTheme( this.styles.theme );     
-        });
-    }
-    
-    attached(){
+        this.pageId = 2;    
+            
         this.updateModel();
-    }
-         
-    
-    canDeactivate(){
-        this.styleAdapter.storeStyles( this.styles );
-        this.themeAdapter.removeTheme();
-        return true;   
-    }
 
-    detached(){
-        this.themeAdapter.removeTheme();
-    }
-
-    navToPage(pageId){
-        this.router.navigateToRoute("readp", {pageId : pageId});
-    }
-  
-    navToPageOne(){
-        //todo: nav...    
-    }
-    
-    updateModel(){
         var storyId = this.storyId;        
         var pageId = this.pageId;
         
@@ -83,12 +49,11 @@ export class Play {
         //update model data
         this.actions =  pageData.actions; 
         this.page = `Page ${pageId}`;
-        this.body = pageData.body;
-    }
-      
-    cycleTheme(){
-        var theme = this.themeAdapter.cycleTheme();
-        this.styles.theme = theme;
+        this.body = pageData.body;    
+    }         
+    
+    navToPage(pageId){
+        this.router.navigateToRoute("page", {pageId : pageId});
     }
  
 }    

@@ -15,7 +15,7 @@ export class App {
           
           // hidden top level routers
           ,{ route: 'story', name: 'write-story',  moduleId: './write/story/w-story-router', nav: false, title:'Write' }
-          ,{ route: 'read', name: 'read',  moduleId: './play/game/p-game-router', nav: false, title:'Read' } // read / play game
+          ,{ route: 'read', name: 'read',  moduleId: './play/game/router', nav: false, title:'Read' } // read / play game
         
         ]);
 

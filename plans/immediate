@@ -9,6 +9,9 @@ upload database scaffolding into seperate repo
 update it to accomodate new expecattions,
 especially for user tracking features / stats
 
+move inline styles out of game section
+eg src/play.game.html
+
 
 mid term:
 design home page

@@ -11,89 +11,47 @@ import lodash from 'lodash';
 export class TextStyles {
     @bindable styles;
 
-    constructor(){
-//        this.gameStyles = gameStyles;
+    applyToBody( cssClass ){
+        var body = document.getElementsByTagName('body')[0];    
+        body.classList.add(cssClass);
+    }
     
-        var fontSizes = [ 'font-size:.8em;','font-size:1em;' ,'font-size:1.2em;', 'font-size:1.4em;', 'font-size:1.8em;', 'font-size:2.0em;'];
+    removeFromBody( cssClass ){
+        if (cssClass.trim() == '') return;
         
-        var fontFamilies = [  { name : "Courier New", value:"font-family:‘Courier New’, Courier, monospace;"},                             
-                              { name : "Helvetica Nueue", value:" "}, //default                             
-                              { name : "Impact", value:"font-family:Impact, Charcoal, sans-serif;"},
-                              { name: 'Lucida Unicode', value: "font-family:‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;"},
-                              { name: "Palatino", value : "font-family:‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;"},
-                              { name: "Tahoma", value:"font-family:Tahoma, Geneva, sans-serif;"}];
-                             
+        var body = document.getElementsByTagName('body')[0];    
+        body.classList.remove(cssClass);       
+    } 
+    
+    swapStyle( propName, newValue ){
+        this.removeFromBody( this.styles[propName]);
+        this.styles[propName] = newValue;
+        this.applyToBody(newValue); 
+    }
+    
+    setFontSize( f ){  this.swapStyle('fontSize', f); } 
+    setFontFamily( f ){ this.swapStyle('fontFamily', f.value);}    
+    setLineHeight( f ){ this.swapStyle('lineHeight', f ); }
+    setMargin( m ){ this.swapStyle('margin', m.value);}    
+    
+    constructor(){  
+    this.fontSizes = [ 'gt-fs-08', 'gt-fs-10', 'gt-fs-12', 'gt-fs-14', 'gt-fs-18', 'gt-fs-20'];
+    
+    this.fontFamilies = [  { name : "Courier New", value:"gt-ff-Courier"},                             
+                          { name : "Helvetica Nueue", value:"gt-ff-Helvetica"}, //default                             
+                          { name : "Impact", value:"gt-ff-Impact"},
+                          { name: 'Lucida Unicode', value: "gt-ff-Lucida"},
+                          { name: "Palatino", value : "gt-ff-Palatino"},
+                          { name: "Tahoma", value:"gt-ff-Tahoma"}];
+                         
 
-        var lineHeights = [ 'line-height:1.45em', 'line-height:1.8em', 'line-height:2.0em'];
+    this.lineHeights = [ 'gt-lh-145','gt-lh-180', 'gt-lh-200'];
 
-        var margins =  [  {name: 'Newspaper', value:'max-width:400px;'},
-                          {name: 'Paperback', value:'max-width:700px;'},
-                          {name: 'Wide', value:' '},
-                          {name: 'Page Fit', value:'width:100%; margin:0;'} ];
-
-        
-        this.fontSizes = fontSizes;
-        this.fontFamilies = fontFamilies;
-        this.lineHeights = lineHeights;
-        this.margins = margins;              
-     }
-     
-     activate(){
-          
-        //notes, defaults must match default values w/ any alterations
-        var defaults = {
-            fontSize : this.fontSizes[1],
-            fontFamily : this.fontFamilies[1].value,
-            lineHeight : this.lineHeights[0],
-            margin : this.margins[2].value
-        };
-        
-            
-        this.fontFamily = this.fontFamily || defaults.fontFamily;
-        this.fontSize =  this.fontSize || defaults.fontSize;
-        this.lineHeight = this.lineHeight || defaults.lineHeight;
-        this.margin = this.margin || defaults.margin;
-        
-        var that = this;
-        this.styles = {
-            fontFamily : that.fontFamily,
-            fontSize : that.fontSize,
-            lineHeight : that.lineHeight,
-            margin : that.margin
-        };
-
-     }
-     
+    this.margins =  [  {name: 'Newspaper', value:'gt-newspaper'},
+                      {name: 'Paperback', value:'gt-paperback'},
+                      {name: 'Wide', value:'gt-wide'},
+                      {name: 'Page Fit', value:'gt-fit'} ];        
+    }
 }    
     
           
-        //store like...
-        /* 
-        fontSize : 'font-Size:1em',
-        fontfamily : 'font-family:Trebuchet Ms......',
-        lineHeight : 'line-height:106em
-        margin : 'width:...
-        
-        when load try to match on value
-        if not found, use defaults
-        
-        double bind so that it will change the defaults ot he preets if none are selected
-        
-        store presets in localhistory on outside (which knows the page context)
-        */
-        
-        
-        //output return classes
-        
-        
-        //this.router = router;
-        
-        // generate font options arrays
-        // font families
-        // font sizes, line spacing, margins?
-        
-        //should al tie to css classes?
-        //alt: tie diretly to inline-styles... hmm,
-        // later has less dependencies so should probably choose...,
-        // but classes is cleaner I think
- 
