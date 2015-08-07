@@ -50,3 +50,19 @@ section {
   align-items: center;
   justify-content: space-around;
 }
+
+.centered-column{
+  @extend .centered;
+  flex-direction: column;
+}
+.relative{
+  position:relative;
+}
+
+.stretched{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}

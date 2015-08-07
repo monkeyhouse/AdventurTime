@@ -30,39 +30,20 @@
         "text": "ullamco"
       }
     ],
-    "authors": [
-      {
-        "id": 5253,
-        "name": "Eugenia Noel",
-        "icon": "http://placehold.it/32x32",
-        "rank": 0
-      },
+    "authors": [      
       {
         "id": 8996,
         "name": "Knowles Potter",
         "icon": "http://placehold.it/32x32",
         "rank": 1
-      },
-      {
-        "id": 5283,
-        "name": "Mcintosh Barr",
-        "icon": "http://placehold.it/32x32",
-        "rank": 2
-      },
-      {
-        "id": 5018,
-        "name": "Collins Luna",
-        "icon": "http://placehold.it/32x32",
-        "rank": 3
-      },
-      {
-        "id": 2078,
-        "name": "Baird Martin",
-        "icon": "http://placehold.it/32x32",
-        "rank": 4
+      },{
+        "id": 5253,
+        "name": "Eugenia Noel",
+        "icon": "32x32",
+        "rank": 0
       }
     ],
-    "authorCount": 6
+    "authorCount": 2
   },
   {
     "id": "b484a948-f65b-4e30-8807-aa224c857451",
@@ -127,7 +108,7 @@
         "rank": 4
       }
     ],
-    "authorCount": 5
+    "authorCount": 7
   },
   {
     "id": "301ec783-c911-4894-9f9a-07f44303073f",

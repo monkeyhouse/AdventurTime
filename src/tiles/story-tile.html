@@ -1,46 +1,58 @@
 
 <template>    
-<section class="story-list-item">
+<div class="story-tile">
     
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-1">
-        
-           
-      
-            
+    <div class="hidden-xs story-tile-back relative">
+        <div class="stretched centered">
+          <img src.bind="picture" /></div>
     </div>
-    <div class="col-xs-12 col-md-9">
+
+    <div class="story-tile-detail">
         
         <div class="dumbell-flex-wrap">
             <div class="title"><a href.bind="'#/read/' + id" >${title}</a></div>
-            <div class="pull-right rating-container">
+            <div class="rating-container muted">
                 <span><a href="#">${likes}<i class="fa fa-arrow-up"></i></a></span>
                 <span><a href="#">${views}<i class="fa fa-eye"></i></a></span>                    
                 <span><a href="#">${comments}<i class="fa fa-comment-o"></i></a></span>
-            </div>
+            </div>            
+           
         </div>
         
         <p>${summary}</p>
 
         <div class="dumbell-flex-wrap">
 
+
+        
+            
             <div class="tag-container">
                 <a repeat.for="t of tags" class="tag" href.one-time="t.id">
                     ${t.text}
                 </a>
+                
             </div>
-            
-            <div>
+             <div>
                 <div class="muted">published on 10.21.2015 </div>
-                <div class="user-icon-container">
-                <div repeat.for="users of authors">                    
-                   <compose view="tiles/user-tile.html" view-model.bind="user" >
-                </div>
-            </div>
+                <div>
+                  <div if.bind="authorCount == 1">
+                       <compose view="tiles/user-tile.html" view-model.bind="authors[0]" ></compose>
+                       ${authors[0].name}                   
+                  </div>            
+                 <div class="user-icon-container" if.bind="authorCount > 1">
+                        <!--top five-->
+                        <div repeat.for="user of authors">                    
+                           <compose view="tiles/user-tile.html" view-model.bind="user" ></compose>
+                        </div>
+                        <div if.bind="authorCount > 5" class="muted">
+                         &nbsp; & More
+                        </div>  
+                  </div>            
+              
+              
+                 </div>
+             </div>
         </div>
-
-
-</div>
-
-</section>    
+    </div>
+</div>    
 </template>
