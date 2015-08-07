@@ -1,0 +1,30 @@
+<link type="text/stylesheet" rel="stylesheet" href="/styles/css/game.css" >
+
+<template>
+   
+           
+     <div class="container reading-container" css="${styles.margin}">
+          
+            <router-view></router-view>
+     </div>
+            
+            
+                  
+    
+    <div style="position:fixed; left:0; bottom:0; margin:10px;">
+        <button class="btn btn-default btn-large themed-button" click.trigger="cycleTheme()">Change Theme </button>
+        
+     <require from="./overlay"></require>
+     <require from="./text-styles" ></require>  
+     
+     <overlay>
+        <overlay-trigger> <button class="btn btn-default btn-large themed-button">Change Font </button></overlay-trigger>
+        <overlay-content> 
+                       
+            <text-styles styles.two-way="styles"></text-styles>
+        </overlay-content>
+     </overlay>
+ 
+     </div>
+     
+</template>

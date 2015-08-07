@@ -1,0 +1,60 @@
+// default font sizes, these are aaplied to containers
+// and used as the bases for the applied themes
+.game-cover-title{ font-size: 3rem; }
+.game-title{ font-size: 1.8rem; }
+.game-text{ font-size: 1.2rem; }
+
+/* notes: naming conventions uses gt- "game theme dash"
+ to allow for eash removal of all themes from body (remove "gt-*" ) */
+
+
+/* container widths */
+$reading-container : '.reading-container';
+body.gt-newspaper #{$reading-container} {  max-width:400px;}
+body.gt-paperback #{$reading-container} {  max-width:700px;}
+body.gt-wide      #{$reading-container} {  max-width:auto;}
+body.gt-fit       #{$reading-container} {  width:100%; margins: 0;}
+
+/* rest of vars */
+
+$font-sizes: (
+  gt-fs-08 0.8em,
+  gt-fs-10 1.0em,
+  gt-fs-12 1.2em,
+  gt-fs-14 1.4em,
+  gt-fs-18 1.8em, 
+  gt-fs-20 2.0em 
+ 
+); 
+
+$font-families: ( 
+  gt-ff-Helveica unquote("‘Trebuchet MS’, Helvetica, sans-serif"),
+  gt-ff-Impact  unquote("Impact, Charcoal, sans-serif"),
+  gt-ff-Palatino unquote("‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif"),
+  gt-ff-Tahoma unquote("Tahoma, Geneva, sans-serif"),
+  gt-ff-Courier unquote("‘Courier New’, Courier, monospace"),
+  gt-ff-Lucida unquote("‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif")
+);
+
+$line-height : (
+  gt-lh-145 1.45em,
+  gt-lh-180 1.80em,
+  gt-lh-200 2.0em
+);
+
+@mixin create($themeArray, $themeProp, $selector){
+   @each $rr in $themeArray{
+     
+       #{'.font-demo'}.#{nth($rr,1)},
+       #{'body'}.#{nth($rr,1)} #{$selector} {   
+          #{$themeProp} : nth($rr,2);     
+       }
+     
+   }
+}
+
+
+@include create($font-families, 'font-family','.game-theme'); 
+@include create($font-sizes, 'font-size', '.game-theme');
+@include create($line-height, 'line-height', '.game-theme');
+@include create($line-height, 'line-height', '.game-container');
