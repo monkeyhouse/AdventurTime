@@ -1,31 +1,65 @@
 
 /* font chooser */ 
+
+.font-chooser-section-title{
+    text-align: center;
+    font-size:.9em;
+    font-variant: small-caps;
+    text-transform: capitalize;  
+    color:darkgray;
+}
+ 
+     
 .font-chooser-group{
   display: flex; align-items:stretch;
   flex-wrap:wrap;
   justify-content: center;
 
-  label{
-    margin:5px;
+  button.btn{
+    margin:0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border:1px solid transparent;
+    border-radius:0;
+    text-shadow:0px .04em 0px  hsla(0,50%,80%,0.6),
+                0px .15em .1em hsla(0,50%,80%,0.15),
+                0px .2em .15em hsla(0,50%,100%,0.1),
+                0px .25em .2em hsla(0,50%,100%,0.1);
+        
+
+        
+    &:hover{
+      color:#fba114;
+      background-color:transparent;
+    }
+    
+    &.active, &.active:focus{
+
+      color: rgb(252, 205, 1);
+      border: 1px solid rgb(252, 205, 1);
+      box-shadow: none;
+      background-color:transparent;
+      outline:none;
+    }
   }
   
-  label.font-size{
-    width:12%;
-    max-width:200px;
-    min-width:80px;
-  }
-  
-  label.font-family{
+  button.font-family{
     max-width:160px;
   }
 
-  label.line-height{ 
+
+  button.line-height{ 
     font-size:.9em;
     max-width:200px;
   }
+
+  button.page-margins{
+    min-width:100px;
+    font-size:1.3em;
+    text-align: center;
+  }  
+  
 }
 
    

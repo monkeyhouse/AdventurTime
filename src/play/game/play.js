@@ -29,9 +29,7 @@ export class Play {
     activate(params){        
         console.log('activated');        
         this.storyId = 1;
-        this.pageId = 2;    
-            
-        this.updateModel();
+        this.pageId = params.pageId;    
 
         var storyId = this.storyId;        
         var pageId = this.pageId;

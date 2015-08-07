@@ -14,43 +14,43 @@
         <hr/>
  
        <!--Font sizes-->
-        <h3> Font Size <h3>
+        <h3 class="font-chooser-section-title"> Font Size </h3>
         <div class="font-chooser-group fonts" >                 
-            <label class="btn btn-default white-and-transparent font-size font-demo ${f} ${$parent.styles.fontSize ==  f ? 'active' : ''}" 
+            <button class="btn btn-default white-and-transparent font-size font-demo ${f} ${$parent.styles.fontSize ==  f ? 'active' : ''}" 
                    repeat.for="f of fontSizes" click.trigger="$parent.setFontSize(f)">
                    <span style="line-height:1em"> Aa </span>
-            </label>
+            </button>
         </div>
        
        <br>
-       
+      
        <!--Font Family-->
-       <h3> Font Family <h3>
+       <h3 class="font-chooser-section-title"> Font Family </h3>
        <div class="font-chooser-group">                 
-            <label repeat.for="f of fontFamilies" class="btn btn-default white-and-transparent font-family btn-lg font-demo ${f.value} ${$parent.styles.fontFamily ==  f.value ? 'active' : ''}" 
+            <button repeat.for="f of fontFamilies" class="btn btn-default white-and-transparent font-family btn-lg font-demo ${f.value} ${$parent.styles.fontFamily ==  f.value ? 'active' : ''}" 
                   click.delegate="$parent.setFontFamily(f)" >      
              ${f.name}
-            </label>
+            </button>
         </div>
        
        
        <!-- Line Spacing-->
-      <h3> Line Spacing </h3>
+      <h3 class="font-chooser-section-title"> Line Spacing </h3>
        <div class="font-chooser-group">                 
-        <label repeat.for="f of lineHeights"  class="btn btn-default  white-and-transparent line-height font-demo ${f} ${$parent.styles.lineHeight == f ? 'active' : ''}" 
+        <button repeat.for="f of lineHeights"  class="btn btn-default  white-and-transparent line-height font-demo ${f} ${$parent.styles.lineHeight == f ? 'active' : ''}" 
                 click.delegate="$parent.setLineHeight(f)" >
                Lorem ipsum dolor sit </br> consectetur adipi elit
-        </label>
+        </button>
        </div>
         
      
        <!--Margins -->
-       <h3> Page Margins </h3>
+       <h3 class="font-chooser-section-title"> Page Margins </h3>
        <div class="font-chooser-group">                 
-         <label repeat.for="m of margins"" class="btn btn-default  btn-lg white-and-transparent font-demo ${f} ${$parent.styles.margin == m.value ? 'active' : ''}" style="min-width:150px;"
+         <button repeat.for="m of margins"" class="btn btn-default  page-margins white-and-transparent font-demo ${f} ${$parent.styles.margin == m.value ? 'active' : ''}"
                 click.delegate="$parent.setMargin(m)" >
            ${m.name}
-        </label>
+        </button>
        </div>
        
  

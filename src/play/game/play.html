@@ -9,7 +9,7 @@
   
             <div class="row">
                  <header class="col-xs-12">
-                    <h2 class="game-title"><span class="game-theme">${story.title}</span></h2>
+                    <h2 class="game-title"><span class="game-theme muted">${story.title}</span></h2>
                   
                 </header>
              </div>
@@ -21,7 +21,7 @@
                     <div class="row" style="display:flex; align-items:stretch; flex-wrap:wrap; margin-top:10px" >
                
                       <div class=" col-xs-12 col-md-6" style="display:flex; align-items:stretch; padding:0; margin-right:-2px;" repeat.for="a of actions" >
-                        <button class="btn btn-default themed-button game-theme " style="white-space:normal; margin: .2em .2em 0 0; width:calc(100% - 1em)" 
+                        <button class="btn btn-default themed-button game-action-text " style="white-space:normal; margin: .2em .2em 0 0; width:calc(100% - 1em)" 
                             click.trigger="$parent.navToPage(a.pageId)">
                             <span class="game-theme">
                             ${a.body}
@@ -33,7 +33,9 @@
                 </nav>
            </div>
             <footer style="margin-top:20px">
-              <small class="muted pull-right">${page}</small>
+                <div class="game-page-number pull-right">
+                    <span class="game-theme muted">${page}</span>
+                </div>
             </footer>
   
 

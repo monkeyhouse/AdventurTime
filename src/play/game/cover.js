@@ -43,7 +43,7 @@ export class Cover {
       
     start(){
         //todo: nav to page one
-         this.router.navigateToRoute("readp", {pageId : pageId}); 
+         this.router.navigateToRoute("page", {pageId : 1}); 
     }
     
 }    

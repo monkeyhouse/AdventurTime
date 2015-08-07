@@ -21,7 +21,7 @@ export class Router{
         config.map([
             
             { route: ['','cover'], name: 'begin',  moduleId: './cover', nav: false } ,
-            { route: 'page/:id', name: 'page',  moduleId: './play', nav: false } 
+            { route: 'page/:pageId', name: 'page',  moduleId: './play', nav: false } 
             
         ]); 
 

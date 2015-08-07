@@ -26,6 +26,13 @@
   background-position: 0 0, 15px 15px, 6px 6px;
   color:white;
   
+  .game-theme {
+    color: white;
+  }
+  
+  .game-theme.muted{
+     color: grey;
+   }
   .btn.themed-button {
     background-color:transparent;
     color:white;
