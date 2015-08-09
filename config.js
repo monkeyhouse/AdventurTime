@@ -49,6 +49,7 @@ System.config({
     "font-awesome": "npm:font-awesome@4.4.0",
     "jquery": "npm:jquery@2.1.4",
     "lodash": "npm:lodash@3.10.1",
+    "moment": "github:moment/moment@2.10.6",
     "github:aurelia/animator-css@0.14.1": {
       "aurelia-metadata": "github:aurelia/metadata@0.7.2",
       "aurelia-templating": "github:aurelia/templating@0.13.16"

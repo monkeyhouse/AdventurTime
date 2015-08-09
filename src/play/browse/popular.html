@@ -1,10 +1,10 @@
 <template>
     <section>
-        <h2>Todo : ${heading}</h2>
-
-        <h3>Features</h3>
-        <ul repeat.for="feature of features">
-            <li>${feature}</li>
-        </ul>
-    </section>
+            <br />
+        <div class="story-tiles">
+            <compose repeat.for="story of stories" class="story-tile-container compact"
+                 view="tiles/story-tile-compact.html" view-model.bind="story" ></compose>
+           
+        </div>     
+     </section>
 </template>

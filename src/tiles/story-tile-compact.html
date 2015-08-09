@@ -1,0 +1,46 @@
+
+<template>    
+<div class="story-tile col-xs-12 col-md-7">
+    
+    <!--<div class="hidden-xs story-tile-back relative">
+        <div class="stretched centered">
+          <img src.bind="picture" /></div>
+    </div>-->
+
+    <div class="story-tile-detail">
+        
+        <div class="dumbell-flex-wrap">
+            <div class="title"><a href.bind="'#/read/' + id" >${title}</a></div>
+          
+        </div>
+        
+        <!--<div class="relative " style="height:1em">
+            <p class="stretched">-->
+          <p >
+                  ${summary}
+         </p>     
+                <!--</p>
+        </div>-->
+        <div class="dumbell-flex-wrap meta-details">
+
+            <ul class="list-inline muted">
+                 <li><a>${likes} likes</a>
+                 <li><a>${views} views</a>                    
+                 <li><a>${comments} comments</a>
+            </ul>            
+     
+            
+            <ul class="list-inline">
+                    <li repeat.for="t of tags"><a href.one-time="t.id" class="compact-tag">
+                    ${t.text}</a>
+                
+            </ul>
+            
+             <div>
+                <div class="muted">10.21.2015 </div>
+               
+             </div>
+        </div>
+    </div>
+</div>    
+</template>

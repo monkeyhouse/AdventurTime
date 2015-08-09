@@ -1,0 +1,17 @@
+<template>
+   
+     <nav class="navbar navbar-default" style="background-color:transparent; border:none; margin-top:5px; margin-bottom:0; min-height:35px;">
+         <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-right">
+          <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">                       
+             <a href.bind="row.href" style="padding-top:5px; padding-bottom:5px;">${row.title}</a>
+       </li>      
+     
+     </div>
+    </nav>
+
+     <div class="row" style="padding: 0">
+            <router-view></router-view>
+     </div>
+            
+</template>

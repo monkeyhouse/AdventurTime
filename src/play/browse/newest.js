@@ -10,15 +10,6 @@ export class Popular{
 			response => 
 			{ 
 			  this.stories = response.content;
-			  
-			  
-			  //construct links			  
-			  var stories = this.stories;
-			  for(var story in stories){
-				 
-				//  var url = ...;
-				  
-			  }
 			});
 	}
     

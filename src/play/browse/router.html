@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/styles/css/browse.css" type="text/css"></link>
+
+
+<template>
+    <div class="container">
+
+    <div>
+      <ul class="nav nav-tabs">
+          <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">                       
+             <a href.bind="row.href">${row.title}</a>
+           </li>      
+     </ul>
+     <!--small margins -->
+
+     <div class="compact-filter-row">
+      
+     <span>Compact / Expanded </span>
+     
+     <span>Stories from 
+         <select class="inline-select">
+             <option value="1week">past 1 week</option>
+            <option value="1month">past 1 month</option>
+            <option value="3months">past 3 months</option>
+            <option value="1year">past 1 year</option>             
+            <option value="all">all time</option>
+         </select>
+         in
+         [all (def) / muliselect control? ] categories =></span>
+     </div>
+  
+    </div>
+
+     <div class="row" style="padding: 0">
+            <router-view></router-view>
+     </div>
+</div>            
+</template>

@@ -1,9 +1,46 @@
-﻿{
-  "id" : 1,
-  "title": "Take the money and run",
-  "summary": "Once upon a time, in a galaxy far away... A rough man says its all tied together. He says you should go downtown and ask around. He says he knows a guy behind Geno's Pizzaria and he'll come with you to make the introduction. You brush by him and walk up to a convenience store.",
-  "setting": "",
-  "genres" : [  { "id": "1", "text" : ""}, { "id": "1", "text" : ""}, { "id": "1", "text" : ""} ],
-  "createdby" : "",
-  "modifiedby" : ""
-}
+﻿ {
+    "id": "72ab8125-d619-4d1d-ab7d-58b25796e064",
+    "index": 0,
+    "title": "est voluptate ea dolore dolor eu ullamco ut",
+    "summary": "Consectetur ea voluptate ad et voluptate sint nisi Lorem. Commodo officia exercitation amet commodo Lorem consectetur consectetur velit adipisicing. Velit reprehenderit laborum incididunt incididunt.",
+    "picture": "http://placehold.it/64x64",
+    "created": "Mon May 26 2014 05:33:12 GMT+0000 (UTC)",
+    "published": "Mon Apr 14 2014 18:19:55 GMT+0000 (UTC)",
+    "likes": 41,
+    "views": 90,
+    "comments": 12,
+    "pages": 30,
+    "endings": 7,
+    "tags": [
+      {
+        "id": 3341,
+        "text": "in"
+      },
+      {
+        "id": 1685,
+        "text": "esse"
+      },
+      {
+        "id": 1005,
+        "text": "quis"
+      },
+      {
+        "id": 4795,
+        "text": "ullamco"
+      }
+    ],
+    "authors": [      
+      {
+        "id": 8996,
+        "name": "Knowles Potter",
+        "icon": "http://placehold.it/32x32",
+        "rank": 1
+      },{
+        "id": 5253,
+        "name": "Eugenia Noel",
+        "icon": "32x32",
+        "rank": 0
+      }
+    ],
+    "authorCount": 2
+  }

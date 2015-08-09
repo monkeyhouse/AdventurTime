@@ -1,0 +1,35 @@
+<template>
+    
+    <require from="./../../formatters/valueConverters"></require>
+    <section>
+         <h2>${story.title}</h2>
+        
+         
+         <p>${story.summary}</p>
+         
+    
+         <ul class="list-inline ">
+            <li>${story.views} Views
+            <li>${story.comments} Comments
+            <li>${story.likes} Likes
+            <li>Published ${story.published | dateFromToday }
+         </ul>
+         
+     
+         
+         
+         <button type="button" class="btn btn-primary btn-large" style="font-size:2em">Play Now </button>
+         
+         
+         
+         
+         <hr/>
+         <p>Reviews</p>
+         
+         <!-- if played / completed -->
+         <p> Write a review </p>
+             
+         <!-- asdf -->
+     
+     </section>
+</template>

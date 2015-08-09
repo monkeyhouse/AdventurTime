@@ -6,7 +6,7 @@ export class App {
         config.title = 'AdventureTime';
         config.map([
           { route: ['','welcome'], name: 'welcome',  moduleId: './welcome',      nav: true, title:'Welcome' }
-          ,{ route: 'play',  name: 'play',   moduleId: './play/p-router',   nav: true, title:'Play' }
+          ,{ route: 'play',  name: 'play',   moduleId: './play/router',   nav: true, title:'Play' }
           ,{ route: 'write', name: 'write',  moduleId: './write/stories/w-stories-router', nav: true, title:'Write' }
           ,{ route: 'learn', name: 'learn',  moduleId: './learn/learn', nav: true, title:'Learn' }
           ,{ route: 'discuss', name: 'discuss',  moduleId: './discuss/discuss', nav: true, title:'Discuss' }
