@@ -1,18 +1,57 @@
 <link rel="stylesheet" href="/styles/css/browse.css" type="text/css"></link>
 
-<template>
-     <div>
+<template >
+
          <header>
              <h2>Develpment Scratchpad</h2>
         </header>
-
+        <div class="container"> 
+      <div class="row">
+              
+       <div class="col-sm-6">      
+                <h1> My Preferred Tags </h1>
+                
+                
+               
+                <p> Customize the stories you see </p>    
+                <form submit.delegate="exlcudeTag()">
+                   <select value.bind ="selectedTag ">
+                     <option value="">Select a tag </option>
+                     <option repeat.for="t of remainingTags " value.bind="t" >${t.text}</option>                        
+                   </select>        
+                   <button click.trigger="prefer(selectedTag, 5)" type="button" class="btn btn-default btn-xs"> Strong Like</button>
+                   <button click.trigger="prefer(selectedTag, 3)" type="button" class="btn btn-default btn-xs"> Like </button>
+                   <button click.trigger="prefer(selectedTag, 2)" type="button" class="btn btn-default btn-xs"> Dislike </button>
+                   <button click.trigger="prefer(selectedTag, 1)" type="button" class="btn btn-default btn-xs"> Ban </button>
+                </form>
+                
+               <hr>
+               
+                <table class="table">
+                <thead>
+                <tr>
+                        <th>Tag</th>
+                        <th>Preference</th>       
+                        <th></th> 
+                        
         
+                </tr>
         
-       <require from ='./story-tiles' ></require>
-            
-        <story-tiles></story-tiles>            
-          
-      
-    </div>
-  
+                </thead>
+                     <tr repeat.for="t of ratedTags" value.bind="t" >
+                         <td>${t.text}</td>
+                         <td>
+                            <i if.bind="t.preference ==  5" class="fa fa-plus green"></i>
+                            <i if.bind="t.preference >=  4" class="fa fa-plus green"></i>                 
+                            <i if.bind="t.preference >=  3" class="fa fa-plus green"></i>
+                                             
+                            <i if.bind="t.preference == 2" class="fa fa-minus red"></i>                         
+                            <i if.bind="t.preference == 1" class="fa fa-ban red"></i>                                             
+                         </td>
+                         <td class="text-right"><button class="btn btn-default btn-xs" click.delegate="$parent.remove(t)">Remove</button></td>
+                     </tr>                        
+                </table>
+        </div>
+        </div>
+      </div>
 </template>

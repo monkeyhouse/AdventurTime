@@ -50,6 +50,7 @@ System.config({
     "jquery": "npm:jquery@2.1.4",
     "lodash": "npm:lodash@3.10.1",
     "moment": "github:moment/moment@2.10.6",
+    "numeral": "npm:numeral@1.5.3",
     "github:aurelia/animator-css@0.14.1": {
       "aurelia-metadata": "github:aurelia/metadata@0.7.2",
       "aurelia-templating": "github:aurelia/templating@0.13.16"
@@ -194,6 +195,9 @@ System.config({
     },
     "npm:lodash@3.10.1": {
       "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:numeral@1.5.3": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2"
     }
   }
 });

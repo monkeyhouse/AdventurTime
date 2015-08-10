@@ -2,6 +2,10 @@
 
 
 <template>
+    
+    <require from="./../../components/overlay"></require>
+ 
+ 
     <div class="container">
 
     <div>
@@ -25,7 +29,34 @@
             <option value="all">all time</option>
          </select>
          in
-         [all (def) / muliselect control? ] categories =></span>
+         
+         
+        <overlay>
+        <overlay-trigger> <button class="btn btn-default">All Categories</button></overlay-trigger>
+        <overlay-content> 
+            <div style="font-style:normal">  
+            <h1> Tag Preferences </h1>
+            
+            <hr/>
+            Include These
+            
+            <input type="text"           
+            
+            <hr />
+            Exclude These
+            
+            
+                
+            
+            
+            </div>
+        </overlay-content>
+        </overlay>
+
+        
+         
+         
+     </span>
      </div>
   
     </div>
@@ -33,5 +64,8 @@
      <div class="row" style="padding: 0">
             <router-view></router-view>
      </div>
+     
+ 
+     
 </div>            
 </template>
