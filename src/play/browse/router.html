@@ -21,7 +21,7 @@
      <span>Compact / Expanded </span>
      
      <span>Stories from 
-         <select class="inline-select">
+         <select class="inline-select" change.trigger="fxnOnClosed()">
              <option value="1week">past 1 week</option>
             <option value="1month">past 1 month</option>
             <option value="3months">past 3 months</option>
@@ -30,27 +30,27 @@
          </select>
          in
          
-         
-        <overlay>
-        <overlay-trigger> <button class="btn btn-default">All Categories</button></overlay-trigger>
-        <overlay-content> 
-            <div style="font-style:normal">  
-            <h1> Tag Preferences </h1>
-            
-            <hr/>
-            Include These
-            
-            <input type="text"           
-            
-            <hr />
-            Exclude These
-            
-            
+         ${isOpen}
+        <overlay is-open.two-way="isOpen">
+            <overlay-trigger> <button class="btn btn-default">All Categories</button></overlay-trigger>
+            <overlay-content> 
+                <div style="font-style:normal">  
+                <h1> Tag Preferences </h1>
                 
-            
-            
-            </div>
-        </overlay-content>
+                <hr/>
+                Include These
+                
+                <input type="text"           
+                
+                <hr />
+                Exclude These
+                
+                
+                    
+                
+                
+                </div>
+            </overlay-content>
         </overlay>
 
         

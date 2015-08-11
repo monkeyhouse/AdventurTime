@@ -1,4 +1,6 @@
-export class PbrowseRouter{
+//imported computedFrom from 'aurelia-framework';
+
+export class Router{
     heading = 'Play Stories';
     //Read & Play Stories .. you're a protagonist
 
@@ -30,4 +32,11 @@ export class PbrowseRouter{
 
         this.router = router;
     } 
+        
+    isOpen = false;
+    
+    
+    isOpenChanged(propertyName, newValue, oldValue){
+      console.log("changed is called");      
+    }
 }

@@ -18,11 +18,10 @@ export class Router{
     }
     
     configureRouter(config, router){
-        config.map([
-            
+        config.map([            
             { route: ['','cover'], name: 'begin',  moduleId: './cover', nav: false } ,
-            { route: 'page/:pageId', name: 'page',  moduleId: './play', nav: false } 
-            
+            { route: 'page/:pageId', name: 'page',  moduleId: './play', nav: false } ,
+            { route: 'complete', name: 'complete',  moduleId: './complete', nav: false }             
         ]); 
 
         this.router = router;

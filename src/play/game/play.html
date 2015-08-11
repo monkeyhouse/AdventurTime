@@ -28,8 +28,13 @@
                             </span>                         
                         </button>
                       </div>
+                   
                  
                     </div>
+                       
+                      <div if.bind="actions.length == 0" class="centered">
+                        <button class="btn btn-default themed-button btn-large game-theme" click.delegate="navToContinue()">Continue</button>
+                      </div>
                 </nav>
            </div>
             <footer style="margin-top:20px">

@@ -53,6 +53,10 @@ export class Play {
     navToPage(pageId){
         this.router.navigateToRoute("page", {pageId : pageId});
     }
+    
+    navToContinue(){
+        this.router.navigateToRoute("complete");
+    }
  
 }    
     
