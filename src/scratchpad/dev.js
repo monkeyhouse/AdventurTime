@@ -7,7 +7,12 @@ import _ from 'lodash';
 // import 'selectize/css/selectize.bootstrap3.css!'
 
 export class Dev{
-
+  url = "www.cometstories.com";
+  name = "Jimzs Stories";
+  message = '';
   
+  activate(){
+    this.message =  `I enjoyed playing '${this.name}' on STACE. You can play too.`;
+  }
     
 }

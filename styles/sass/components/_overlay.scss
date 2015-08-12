@@ -1,0 +1,39 @@
+/* common overlay styles */
+.overlay-cover{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color:none;
+    z-index:1;
+		
+	&.open{
+    	display: block;
+	}    
+	
+	&.closed{
+    	display:none;
+	}
+}
+  
+  
+.overlay {
+   position:fixed;
+   z-index:2;   
+   padding:5px 15px;
+   background-color:hsla(40,0%,15%,.6); 
+   transition:all .5s ease;   
+    
+   .overlay-close{
+     font-size:2em;  
+     padding:.2em;
+     line-height: 1em;
+     border:none;    
+     color:white;
+     background-color:transparent;     
+   }
+}
+
+
+   

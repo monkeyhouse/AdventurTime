@@ -3,22 +3,27 @@
 <template >
 
 
- <require from="./tags"> </require>
- <require from="./overlay"></require>
- 
+
+  <header>
+   <h2>Develpment Scratchpad</h2>
+  </header>
+
+ <require from="./../components/social-icon-bar"></require>
+ <social-icon-bar if.bind="url != null  && message != null"
+   url.bind="url" content-type='story' message.bind="message"></social-icon-bar>
+
  <hr>
-         <header>
-             <h2>Develpment Scratchpad</h2>
-        </header>
- 
+       
+<!-- 
     <tags></tags>
-    
+     <require from="./tags"> </require>
+ <require from="./overlay"></require>
 <overlay is-open.two-way="isOverlayExpanded">
   <overlay-trigger><button class="btn btn-default"> Menu </button></overlay-trigger>	
   <overlay-content> <h1> Tag Content </h1> 
  
   </overlay-content>
-</overlay>
+</overlay>-->
  
 
      

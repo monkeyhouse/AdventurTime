@@ -26,7 +26,8 @@ export class Cover {
         
         this.summary = 'Placeholder Summary';        
         this.title = 'Placeholder Title';   
-        this.authors = [{name:'Placeholder Author', image:'asdf124124', id:'12312'}];   
+        this.authors = [{name:'Placeholder Author', image:'asdf124124', id:'12312'}];
+        
     }
     
     
@@ -37,6 +38,10 @@ export class Cover {
         if (this.storyId != null && this.story.title != null){ 
             this.title = this.story.title; 
         
+            //todo: makme url incorporate story, pageId, correct base url...
+            this.shareUrl = "www.cometgames.com/read/complete"; //todo: gen from route;
+            this.shareMessage = `I enjoyed playing ${this.title} on Story Time Adventures Community Edition. You can play too at ${this.shareUrl}`;   
+            this.hideSell = true;
         }
      }
   

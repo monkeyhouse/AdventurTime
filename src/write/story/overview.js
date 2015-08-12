@@ -22,7 +22,7 @@ export class Overview {
        
     editPage(page){
         this.selectedPage = page;
-        this.showPageEditor = true;
+        this.isOpen = true;
     }
     
     hidePageEditor(){        

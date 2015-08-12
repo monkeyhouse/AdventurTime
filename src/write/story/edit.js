@@ -9,7 +9,6 @@ import $ from 'jquery';
 export class Edit{
     @bindable page = null;
     @bindable pages = null;
-    @bindable showEditor = null;
 
     heading = 'Editor';
     
@@ -20,24 +19,8 @@ export class Edit{
         this.showEditor = false;
     }
    
-    
-    hideEditor(){        
-        this.showEditor = false;
-    } 
-
-    transition(){
-        // try{
-        //     this.animator.addClass(this.elPageSection, 'au-enter-active')
-        // .then(this.animator.removeClass(this.elPageSection, 'au-enter-active'));
-        // }
-        // catch{}
-    }
-
 
     getNextPage(action){
-        
-        this.transition();
-
         var nextPageId = action.pageId;
         var _ = lodash;
         this.prevPage = this.page;              
@@ -86,25 +69,5 @@ export class Edit{
             return confirm('There are unsaved changes. Reloading this page will reset all changes. Are you sure you want to leave?');
         }
     }
-//     //should pass by object, no need to use id references! for ui at least...
-
-// 
-//     findAction(pageId, actionObj){
-//         var _ = lodash;        
-//         var segment = findSegment(pageId);
-//         var action = _.find(pages.actions, t => t == actionObj);
-//         return action;
-//     }
-//     findPage(pageId){
-//         var _ = lodash;
-//         var plotPoint = _.find(this.pages, t => t.page.id == pageId);
-//         return plotPoint;
-//     }
-// 
-// 
-//     save(){
-// 
-//     }
-
     
 }

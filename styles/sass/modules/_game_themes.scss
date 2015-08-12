@@ -42,6 +42,14 @@
     }
   }
   
+  a {
+    color: lightblue;
+    
+    &:hover{
+      color:white;
+    }
+  }
+  
   .reading-container{
     background-color: hsla(0,50%,0%,.2);
     border: 2px solid black;

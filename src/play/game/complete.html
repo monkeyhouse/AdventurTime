@@ -1,17 +1,20 @@
 <template>
 
+ <require from="./../../components/social-icon-bar"></require>
+   
+   
 <!-- ending page -->
 <div class="reading-content">
 
 <div class="row">
 
       <div class="col-sm-12">
-        You have completed "${title}" <br>
+        You have completed "${title}". This game was made possilble by [authors list] <br>
             Thank you for playing. We hope you enjoyed your time. 
       </div>
          
        
-         <div class="col-sm-6">
+      <div class="col-sm-6">
         <!--Stat s-->
         <h3 class="text-center">Game Statistics</h3>
         <table class="table"> 
@@ -21,39 +24,23 @@
         <tr><td>Actions Taken     </td><td> 31 / 40 </td></tr>
         <tr><td>Total Duration    </td><td> 24 min  </td></tr>
         </table>
-        
-              <!--Share -->
-        <h5>Share Icons (no title)</h5>
-        <!-- Share -->
-        Share on Tw / Fb / Link
-        "I enjoyed playing 'Title' on {STACE}"
+          
+        <div class="text-center">
+             <button class="btn btn-large btn-block btn-default  themed-button">Play again </button>
         </div>
+      </div>
         
     
 
     <div class="col-sm-6">
-        <h3> Rate </h3>
-        
-        Would your reccomend this story to a friend?        
-        <div class="inline-flex">    
-            <div class="btn-group">
-             <button class="btn btn-default">Yes</button>
-             <button class="btn btn-default">No</button>
-            </div>
-            <button class="btn btn-link">Not Sure</button>
-        </div>        
-
-        <span><a >302<i class="fa fa-3x fa-arrow-up"></i></a></span>
-       
      
         <!-- Review -->
         
           <div class="form-group">        
-             <label for="review"><h3> Review * * * * * </h3> </label>
-            <textarea id="review" class="form-control" rows="3" placeholder="Leave a comment"></textarea>
+           <h3> Review x/5 <span class="pull-right"><a>302<i class="fa fa-1x fa-arrow-up"></i></a></span> </h3>
+           <textarea id="review" class="form-control" rows="3" placeholder="Leave a comment"></textarea>
           </div>
-          <button  class="btn btn-default">Save</button>
-       
+          <button  class="btn btn-default btn-block themed-button">Save</button>
 
     </div>
 
@@ -62,20 +49,18 @@
   
 </div>
 
-   
-    <div class="row  text-center">
-        <div class="btn-group justified ">
-            <button class="btn btn-large btn-default  themed-button">Play again </button>
-            <button class="btn btn-large btn-default  themed-button">See other stories</button>
-            About link? - to contributors page?
-        </div>
-    </div>
-    
-</div>
 
-<br /> 
-<br /> 
+</div>
+ 
 <br />
 <br />
+
+ 
+    <div class="pull-right ">
+       <!--Share -->
+      <social-icon-bar if.bind="shareUrl != null && shareMessage != null"
+      url.bind="shareUrl" content-type='story' message.bind="shareMessage" ></social-icon-bar>
+    </div>
+    <div class="pull-left">   <a href="#"> Back to more Stories </a> </div>
 
 </template>

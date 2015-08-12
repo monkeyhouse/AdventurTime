@@ -7,8 +7,8 @@ export class Overlay{
 	   
 	  constructor(element) {
 	    this.element = element;
-	  }
-	  
+		
+	  }	  
   	 
 	 attached(){
 		 var that = this;
@@ -16,23 +16,18 @@ export class Overlay{
 		 $(this.element).find('overlay-trigger').addClass('overlay-trigger');
 		 
  		 $('.overlay-trigger, .overlay-close, .overlay-cover').click(
-			 function(e){
-			 $('.overlay, .overlay-cover').toggleClass('open closed');
-			 e.preventDefault();
-			 
-			 if ($('.overlay').hasClass('closed')){
-				that.isOpen = false;
-				
-			 }else{
-				that.isOpen = true;
-			
-			 }
-		 });
+			 function(e){			 
+			 e.preventDefault();	
+			 that.isOpen = !that.isOpen;		
+		 });	
+	 }
 
+	 isOpenChanged(propertyName, newValue, oldValue){
+		 this.toggleState();
 	 }
 	 
-	 isOpenChanged(propertyName, newValue, oldValue){
-		 console.log('overlay is open was changed');
+	 toggleState(){
+	 	 $('.overlay, .overlay-cover').toggleClass('open closed');			
 	 }
-	
+	 
 }

@@ -1,52 +1,54 @@
     /*todo : top in variable*/
     
-    .overlay {
-       position:fixed;
-       top: 50px;
-       right:0;
-       padding:5px 15px;
-       height:calc(100% - 50px);
-       width:80%;
-       background-color:hsla(40,0%,15%,.6); 
-       overflow-y:scroll;
-       z-index:2;   
-       transition:all .5s ease;   
-	 
-	   &.open{
-    	 transform : translateX( 0% ); 
-	   }  
+.game-overlay .overlay {
+   right:0;
+   top: 50px;
+   height:calc(100% - 50px);
+   width:80%;
+   overflow-y:scroll;
+   background-color:hsla(40,0%,15%,.6); 
+   
+    
+   &.open{
+	 transform : translateX( 0% ); 
+   }  
 
-	   &.closed{
-         transform : translateX( 100% );
-       }
-       
-      .overlay-close{
-        font-size:2em;  
-        padding:.2em;
-        line-height: 1em;
-        border:none;    
-        color:white;
-        background-color:transparent;     
-       }
-    }
+   &.closed{
+     transform : translateX( 100% );
+   }
+}
 
-    .overlay-cover{
-        position:fixed;
-        top:0;
-        left:0;
-        bottom:0;
-        right:0;
-        background-color:none;
-        z-index:1;
-		
-		&.open{
-        	display: block;
-    	}    
-		
-		&.closed{
-        	display:none;
-    	}
-    }
 
    
+/* social icon bar */
+.social-links{
+    display: inline-block;
+	border-radius: .3em;
+
+	.sell{
+		font-variant: small-caps;
+		font-style:italic;
+		margin-right:.2em;
+	}
+	
+	a{
+	   cursor:pointer;
+	   display: inline-block;
+	   padding:.4em .7em;
+	   border-radius: 1em;
+	   background-color: transparent;
+	   transition: background-color 0.3s ease,
+	               color            0.3s ease;
+				   
+	   &:hover{
+			background-color: slategray;
+			color:white;
+	 	}
+	}
+}
+
+.popover{
+    color:black;
+}
+
     

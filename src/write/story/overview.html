@@ -33,18 +33,26 @@
     </table>
     </section>
 
-    <footer  class="fixed bottom-overlay">
+    
+    <require from="./edit"></require>
+    <require from="./../../components/overlay"></require>
+    
+    
+    <overlay class="editor-overlay" is-open.two-way="isOpen">
+      <overlay-trigger>
+         <footer class="bottom-toolbar" show.bind="!showPageEditor">
+                Select a page to edit
+        </footer>
+      </overlay-trigger>	
+    <overlay-content> 
+        <div if.bind="selectedPage">
+            <edit pages.bind="pages" page.bind="selectedPage"></edit>
+        </div>        
+     </overlay-content>
+   
+    
+     </overlay>
 
-    <div if.bind="showPageEditor">
-
-        <require from="./edit"></require>
-        <edit pages.bind="pages" page.bind="selectedPage" show-editor.two-way="showPageEditor"></edit>
-    </div>
-
-    <div if.bind="!showPageEditor">
-        Select a page to edit
-    </div>
-    </section>
 
    
     

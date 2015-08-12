@@ -1,25 +1,28 @@
 /* editor bottom overlay */
 $bottomToolbarMinHeight : 50px;
-.bottom-overlay{
+
+.bottom-toolbar{
   background-color:hsla(0,50%,8%,.7);
   color:white;
   padding:.5em 1em;
-  
-  &.fixed{
-   position:fixed;
-   margin:0; 
-   left:0; bottom:0; width:100%;
-   min-height: $bottomToolbarMinHeight;
-   
-    .extension{
-      position:fixed;
-      width:100%;
-      bottom:$bottomToolbarMinHeight;
-      max-height:90%;
-      overflow-y: scroll;
-      left:0;
-    }
-  }
-
+  position:fixed;
+  margin:0; 
+  left:0; bottom:0; width:100%;
 }
 
+.editor-overlay .overlay{ 
+   left:0; bottom:0; width:100%;
+   max-height:90%;  
+   
+   
+   &.open{
+	 transform : translateY( 0% ); 
+   }  
+
+   &.closed{
+     transform : translateY( 100% );
+   }
+}
+
+   
+    
