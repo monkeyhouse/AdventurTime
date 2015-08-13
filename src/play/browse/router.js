@@ -19,10 +19,18 @@ export class Router{
             // my options: completed, favorites, play later
             //
             // search
-          { route: ['','popular'],       name: 'popular',     moduleId: './popular',     nav: true, title:'Popular' }  
-         ,{ route: 'trending',       name: 'trending',     moduleId: './trending',     nav: true, title:'Trending' }  
-         ,{ route: 'newest',     name: 'newest',   moduleId: './newest',   nav: true, title:'Newest' } 
-         ,{ route: 'reccomended',        name: 'reccomended',      moduleId: './reccomended',      nav: true, title:'Reccomended' }
+          { route: ['','popular'],       name: 'top',     nav: 3, title:'Top',
+              
+              
+              viewPorts: { left: { moduleId: './popular' }, right: { moduleId: './tags' } }
+              
+               }  
+          
+           
+          
+         ,{ route: 'trending',       name: 'trending',     moduleId: './trending',     nav: 1, title:'Trending' }  
+         ,{ route: 'newest',     name: 'newest',   moduleId: './newest',   nav: 2, title:'Newest' } 
+         ,{ route: 'reccomended',        name: 'reccomended',      moduleId: './reccomended',      nav: 4, title:'Reccomended' }
          
          
         ,{ route: 'details',        name: 'details',      moduleId: './story-detail', 

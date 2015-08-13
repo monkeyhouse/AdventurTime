@@ -3,6 +3,7 @@ import $ from 'jquery';
 
 @inject(Element)
 export class Overlay{	
+ 	  @bindable close = x => { console.log("closed, log from overlay")};
  	  @bindable isOpen = false;
 	   
 	  constructor(element) {
@@ -23,6 +24,10 @@ export class Overlay{
 	 }
 
 	 isOpenChanged(propertyName, newValue, oldValue){
+		 if (newValue){
+			 var z = close;
+			 this.close();
+		 }
 		 this.toggleState();
 	 }
 	 

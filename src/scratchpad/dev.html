@@ -1,30 +1,347 @@
-<link rel="stylesheet" href="/styles/css/browse.css" type="text/css"></link>
-
 <template >
-
-
-
   <header>
    <h2>Develpment Scratchpad</h2>
   </header>
-
- <require from="./../components/social-icon-bar"></require>
- <social-icon-bar if.bind="url != null  && message != null"
-   url.bind="url" content-type='story' message.bind="message"></social-icon-bar>
-
+<!-- This is a single-column layout that wraps due to flex-wrap, thus it can be re-organized for mobile screens  -->
  <hr>
-       
-<!-- 
-    <tags></tags>
-     <require from="./tags"> </require>
- <require from="./overlay"></require>
-<overlay is-open.two-way="isOverlayExpanded">
-  <overlay-trigger><button class="btn btn-default"> Menu </button></overlay-trigger>	
-  <overlay-content> <h1> Tag Content </h1> 
  
-  </overlay-content>
-</overlay>-->
- 
-
+ <div class="container">  
+   <div class="row">
+   
+   <div class="big-tile-container">
+         
+      <div class="stats-container">
+        
+           <!--Game Stats-->
+           <div class="tile wide">
+             <div class="tile half stat"><span class="value">100</span><span class="label"> Pages </span> </div>
+             <div class="tile half stat"><span class="value">3  </span><span class="label"> Endings </span> </div>
+           </div>
+           
+           <!--View Stats-->
+           <div class="tile wide stat inline"><span class="value">102</span><span class="label"> Views</span> </div>
+           <div class="tile wide stat inline"><span class="value">103</span><span class="label"> Comments </span> </div>
+           <div class="tile wide stat inline"><span class="value">20</span><span class="label"> Completions </span> </div>
+           <div class="tile wide  stat inline"><span class="value">3.4</span><span class="label"> Stars </span> </div>     
+    
+      </div>
+   
+  
      
+    <div class="center-container">  
+      <h1 class="title"> Some Title </h1>
+     <p> Consectetur ea voluptate ad et voluptate sint nisi Lorem. Commodo officia exercitation amet commodo Lorem consectetur consectetur velit adipisicing. Velit reprehenderit laborum incididunt incididunt.
+      </P>
+       <ul class="tags">
+  	        <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">dolor </a></li>
+            <li><a href="#">a sit</a></li>
+            <li><a href="#">Nueve ictorius</a></li>
+            <li><a href="#">Epentium</a></li>
+         </ul>
+    </div>
+      
+     
+    
+       <!--Contributors-->
+       <div class="icon-container">
+         <h4 class="title"> Contributors </h4>
+         <a class="user-icon"><img src="http://www.gravatar.com/avatar/1111?s=40"/></a>
+         <a class="user-icon"><img src="http://www.gravatar.com/avatar/1111?s=40"/></a>
+         <a class="user-icon"><img src="http://www.gravatar.com/avatar/1111?s=40"/></a>
+         <a class="user-icon"><img src="http://www.gravatar.com/avatar/1111?s=40"/></a>
+         <a class="user-icon"><img src="http://www.gravatar.com/avatar/1111?s=40"/></a>
+         <a class="user-icon"><img src="http://www.gravatar.com/avatar/1111?s=40"/></a>
+
+       </div>  
+       
+        <!--Tags -->
+      <!--<div class="t4  icon-container">
+         <h4 class="title"> Tags </h4>      
+       </div>-->
+         
+   </div>      
+   </div>
+ </div>
+
 </template>
+<style>
+ 
+ .big-tile-container{
+   display:flex;
+   flex-direction:column;
+   flex-wrap:wrap;
+   justify-content:space-between;
+   align-items:stretch;
+   width:100%;
+   padding:.5em 1em;
+   border:1px solid gainsboro;
+   border-radius: 5px;
+ }
+
+.icon-container .title{
+  width:100%;
+}
+ .big-tile-container .title{
+       margin-top:0;
+ }
+
+
+ .tile-container{
+    padding:0;
+    border:0;
+ }
+      
+ 
+  @media(min-width:900px){ 
+    
+    .big-tile-container{
+       max-height:200px;
+
+    }
+
+    .stats-container {
+      width:20%;
+      height:250px;
+    }
+    
+    .icon-container{
+      display:flex;
+      flex-wrap:wrap;
+      align-content:flex-start;
+      padding:1em .5em;
+      justify-content: flex-start;
+      height:auto;
+      min-height:80px;
+      padding-bottom:1em;
+        width:20%;
+        height:250px;
+    }
+    
+    .user-icon{
+      margin:1px; 
+    }
+         
+    .tile{
+      float:left;
+      padding:0;
+      border:0;
+      width:10%;
+      height:80px;
+    }
+    
+    .tile.wide{
+      width:100%;
+    }
+    
+    .tile.half{
+      width:50%;
+    }
+    
+    .center-container{
+      margin:0 1%;
+      width:58%;
+      background-color:hsla(0,50%,100%,.6);
+      position: relative;
+      padding:.3em .5em;
+      height:250px;
+      padding-bottom:20px;
+    }
+    
+    ul.tags{
+      position: absolute;
+      bottom:0;
+      display:inline-flex;
+    }
+    
+    .tile-container{
+      align-content:flex-start;
+      display:flex;
+      flex-wrap:wrap;
+      flex-direction:row;
+      
+      float:left;
+      width:20%; 
+      padding:0;
+      border:0;
+      background-color: hsla(400,50%,80%,.2); 
+    }    
+    
+
+     .stat{
+       display:inline-flex;
+       flex-direction: column;
+       justify-content:center;
+       align-content: stretch;
+       text-align: center;
+     }
+     
+     .stat .value{
+       font-size:2em;
+     }
+     
+     .stat .label{
+       color:black;
+       white-space: normal;
+     }
+     
+
+    .stat.inline{
+      flex-direction: row;      
+      display:inline-flex;
+      justify-content: flex-start;
+      align-items: baseline;
+      height:1.8em;
+      background-color:transparent;
+      border-bottom:1px dotted gainsboro;
+    }
+    .stat.inline .value{
+      font-size:1em;
+      width:3em;
+      text-align: right;
+      display:inline-block;
+      font-weight: bold;
+    }
+    
+    .stat.inline .label{
+      color:black;
+      padding-left:.4em;
+    }
+    
+  }
+  
+  
+ 
+  @media (min-width:600px) and (max-width:900px){    
+   
+     .tile-container{
+      float:left;
+      width:20%; 
+      padding:0;
+      border:0;
+ 
+    }    
+    
+    .icon-container{
+          background-color:transparent;
+          display:flex;
+          flex-wrap:wrap;
+    }
+    .icon-container .title{
+       display:none;
+    }
+    
+    .icon-container .user-icon{
+      margin:1px;
+    }
+    .tile{
+     display:block;
+
+    }
+    
+   
+  }
+  
+  @media (max-width:900px){
+    
+    .big-tile-container{
+
+      margin: 1%;
+      width: 98%;
+    }
+       
+     .tile{
+       display:inline-block;
+     }
+      
+     .stat{
+       display:inline-flex;
+       align-items: baseline;       
+     }
+     .stat .label{
+       color:black;
+       padding-left:.2em;
+     }
+     
+     .icon-container .title{
+       display:none;
+    }
+     
+    .stats-container{
+      display: inline;
+    }
+     
+    .center-container{
+      order:-1;
+    }
+   .tile-container{
+      display:block;
+      width:100%;
+     }
+     
+     .stats-container{
+       margin:.2em 0;
+     }
+   
+  }
+  
+  .tags{
+  	margin:0;
+  	padding:0;
+  	position:relative;
+  	list-style:none;
+	}
+
+  .tags li{
+    margin:.3em .5em;
+  }  
+  .tags li, .tags a{
+	  float:left;
+  	height:24px;
+  	line-height:24px;
+  	position:relative;
+  	font-size:11px;
+	}
+  
+  .tags a{
+	margin-left:20px;
+	padding:0 10px 0 12px;
+	background:#0089e0;
+	color:#fff;
+	text-decoration:none;
+ 	border-bottom-right-radius:4px;
+	border-top-right-radius:4px;	
+	} 
+  
+  
+  .tags a:before{
+	content:"";
+	float:left;
+	position:absolute;
+	top:0;
+	left:-12px;
+	width:0;
+	height:0;
+	border-color:transparent #0089e0 transparent transparent;
+	border-style:solid;
+	border-width:12px 12px 12px 0;		
+	}
+  
+  .tags a:after{
+	content:"";
+	position:absolute;
+	top:10px;
+	left:0;
+	float:left;
+	width:4px;
+	height:4px;
+	border-radius:2px;
+	background:#fff;
+	box-shadow:-1px -1px 2px #004977;
+	}
+  
+  .tags a:hover{background:#555; color:white;}	
+
+.tags a:hover:before{border-color:transparent #555 transparent transparent;}
+  
+</style>

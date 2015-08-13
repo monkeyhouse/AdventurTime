@@ -32,6 +32,7 @@ export class GameState{
   }	
     
    updateValues(obj, values){
+     //Object.assign(obj, values);
      for( var key in values){
          obj[key] = values[key];
      }
