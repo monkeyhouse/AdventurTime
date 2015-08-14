@@ -11,6 +11,8 @@ export class App {
           ,{ route: 'learn', name: 'learn',  moduleId: './learn/learn', nav: true, title:'Learn' }
           ,{ route: 'discuss', name: 'discuss',  moduleId: './discuss/discuss', nav: true, title:'Discuss' }
           ,{ route: 'scratchpad', name: 'scratchpad',  moduleId: './scratchpad/dev', nav: true, title:'Scratchpad' }
+          ,{ route: 'devalt', name: 'devAlt',  moduleId: './scratchpad/layout', nav: true, title:'Scratchpad' }
+        
           // ,{ route: 'fontchooser', name: 'fontchooser',  moduleId: './font-chooser', nav: true, title:'Font Chooser' }
           
           // hidden top level routers

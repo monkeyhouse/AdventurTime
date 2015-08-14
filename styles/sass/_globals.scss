@@ -1,0 +1,27 @@
+
+/* from globals */
+$border-light:1px dotted gainsboro;
+$border-normal:1px solid gainsboro;
+$border-dark:1px solid #bbb;
+$border-radius-normal:5px;
+
+$text-color-light: #777;
+$text-color: #333;
+$text-color-dark: #111;
+
+$screen-xl-min:900px;
+$screen-lg-max:899px;
+
+
+$large-title-font-size:20px;
+$title-font-size:16px;
+$small-title-font-size:12px;
+
+
+
+
+@media( max-width: $screen-lg-max){
+ .xl-visible {
+	 display: none;
+ }	
+}

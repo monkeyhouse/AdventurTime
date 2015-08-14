@@ -1,0 +1,123 @@
+// vars
+/* from globals */
+
+/* end from globals */
+
+@import '_globals';
+
+@import 'partials/_stats';
+@import 'partials/_tags';
+@import 'partials/_authors';
+@import 'partials/_dates';
+
+/* _story-listing.scss */
+
+.story-listing{
+  
+$content-width: 70%;
+$stats-width: 15%;
+$contributors-width: 15%;
+
+$content-height:130px;
+$content-inner-height: $content-height - 20px;
+$title-max-height:40px;
+$paragraph-max-height:$content-inner-height - $title-max-height;
+    
+.story-item{
+   display:flex;
+   flex-direction:column;
+   flex-wrap:wrap;
+   justify-content:flex-start;
+   width:100%;
+   padding:.5em;
+   position: relative;
+   
+   border:$border-normal;
+   border-radius: $border-radius-normal;
+   
+   .center-title-container{
+      font-size:$large-title-font-size;
+      margin-top:0;
+      margin-bottom:.1em;     
+      line-height: 1em;
+   }
+
+ }
+      
+ @media(min-width: $screen-xl-min){ 
+
+    .story-item{
+       height:$content-height;
+	     padding-bottom:10px;
+    }
+    
+    .inline-stat-container {
+      width:15%;
+      max-height:$content-inner-height; 
+    }
+
+     
+    .user-icon-container{
+      width:15%;
+    }
+ 
+    .center{
+      width:70%;
+      padding:2px 6px;    
+    } 
+       
+
+    .center-title-container{
+      max-height:$title-max-height;
+      @extend .center;    
+    }
+    
+    .center-content-container{
+      padding-top:0;
+      padding-bottom:0; 
+      max-height:$paragraph-max-height;
+      text-overflow: ellipsis;
+      font-size:1.4rem;
+      line-height: 2rem;
+      position: relative;
+      @extend .center;
+    }
+
+
+    
+    
+  }
+    
+
+  
+  @media (max-width: $screen-lg-max){    
+    .big-tile-container{
+      margin: 1%;
+      width: 98%;
+    }
+    
+    .center-title-container{
+      order:-2;
+     } 
+    
+    .first.inline-stat-container{
+       display: block;
+       margin:.2em 0;
+       order:-1;
+     }
+     
+     ul.tags{
+       position:relative;
+       order:0;
+    }
+    
+    .second.inline-stat-container{
+      order:1;
+    }
+  
+     
+  }
+  
+}
+
+  

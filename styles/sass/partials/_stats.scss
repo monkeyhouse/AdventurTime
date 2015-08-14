@@ -1,0 +1,78 @@
+/* default styles for inline-stat
+   default styles for inline-stat container
+*/
+
+
+/* default styles */
+.inline-stat-values-label-base{
+   font-weight: normal;
+   font-size:1.3rem;
+   color:$text-color;
+   white-space: normal;
+}
+
+.inline-stat{  
+  display:inline-flex;
+  justify-content: flex-start;
+  align-items: baseline;          
+
+  .value{
+    @extend .inline-stat-values-label-base;        
+  }       
+  .label{
+    @extend .inline-stat-values-label-base;
+    padding-left:.4em;
+    font-size:1.2rem;   
+  }  
+  .text{
+     @extend .inline-stat-values-label-base;   
+     font-size:1.2rem;   
+     padding: .2em .6em .3em;     
+  }
+}
+
+.inline-stat-container{
+    display:flex;
+    align-content:flex-start;
+    flex-wrap:wrap;
+    flex-direction:row;
+}
+
+
+@media (max-width: $screen-lg-max){
+    .inline-stat{
+       .label, .value, .text{
+         color:$text-color-light;
+       }
+    }    
+}
+    
+@media(min-width: $screen-xl-min){ 
+   .inline-stat{
+      .label, .value, .text{
+         color:$text-color-dark;
+       }
+   }             
+
+   .inline-stat-container.stacked{
+      display:block;
+      
+      .inline-stat{
+          height:1.3em;
+          border-bottom:$border-light;
+          width:100%;
+          
+          .value{
+              width:3em;
+              text-align: right;
+          }
+          
+          .text{
+             width:100%;
+             text-align: center;
+          }
+      
+        }
+    }  
+    
+}

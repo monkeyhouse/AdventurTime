@@ -1,0 +1,29 @@
+// $screen-xl-min:1200px;
+// $screen-lg-max:1199px;
+
+
+.user-icon-container{ 
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    padding:0 .5em 1em .5em;    
+    
+    .title{
+      width:100%;
+      font-size:$small-title-font-size;
+      margin:0; 
+    } 
+    
+
+    .user-icon{
+      margin:1px; 
+    }
+   
+}
+
+@media( max-width: $screen-lg-max){
+  .user-icon-container{ 
+    padding:0;
+   }
+}
+
