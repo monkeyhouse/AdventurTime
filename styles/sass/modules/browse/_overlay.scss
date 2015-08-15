@@ -4,7 +4,7 @@
    height:calc(100% - 50px);
    width:80%;
    overflow-y:scroll;
-   background-color:hsla(40,0%,15%,.7); 
+   background-color:hsla(40,0%,15%,.8); 
    font-size:1.2rem;
    color:white;
    font-variant: normal;
@@ -15,5 +15,9 @@
 
    &.closed{
      transform : translateX( 100% );
+   }
+   
+   a{
+     color:orange; 
    }
 }
