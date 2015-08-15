@@ -4,7 +4,7 @@
 <template>
     
     <require from="./../../components/overlay"></require>
- 
+    <require from ="./tags"></require>
  
     <div class="container">
 
@@ -18,9 +18,27 @@
 
      <div class="compact-filter-row">
       
-     <span>Compact / Expanded </span>
-     
-     <span>Stories from 
+     <span>Stories in 
+
+        <overlay class="browse-overlay" is-open.two-way="isOpen">
+            <overlay-trigger> <button class="btn btn-link">Preferred Categories</button></overlay-trigger>
+            <overlay-content> 
+                <div style="font-style:normal">  
+                <h1> Tag Preferences </h1>
+                
+                <hr/>
+                <tags></tags>      
+                
+          
+                
+                </div>
+            </overlay-content>
+        </overlay>
+         
+       
+
+<!--
+          from 
          <select class="inline-select" change.trigger="fxnOnClosed()">
              <option value="1week">past 1 week</option>
             <option value="1month">past 1 month</option>
@@ -28,32 +46,7 @@
             <option value="1year">past 1 year</option>             
             <option value="all">all time</option>
          </select>
-         in
-         
-         ${isOpen}
-        <overlay is-open.two-way="isOpen">
-            <overlay-trigger> <button class="btn btn-default">All Categories</button></overlay-trigger>
-            <overlay-content> 
-                <div style="font-style:normal">  
-                <h1> Tag Preferences </h1>
-                
-                <hr/>
-                Include These
-                
-                <input type="text"           
-                
-                <hr />
-                Exclude These
-                
-                
-                    
-                
-                
-                </div>
-            </overlay-content>
-        </overlay>
-
-        
+        -->
          
          
      </span>
@@ -64,7 +57,7 @@
      <div class="row" style="padding: 0">
             <router-view></router-view>
      </div>
-     
+<!--     
       <div class="row">
           <div class="col-md-7">
           <router-view name="left"></router-view>
@@ -72,7 +65,7 @@
         <div class="col-md-5">
             <router-view name="right"></router-view>
         </div>      
-    </div>
+    </div>-->
 
      
 </div>            

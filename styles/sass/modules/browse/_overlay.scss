@@ -1,0 +1,19 @@
+.browse-overlay .overlay { 
+   right:0;
+   top: 50px;
+   height:calc(100% - 50px);
+   width:80%;
+   overflow-y:scroll;
+   background-color:hsla(40,0%,15%,.7); 
+   font-size:1.2rem;
+   color:white;
+   font-variant: normal;
+    
+   &.open{
+	 transform : translateX( 0% ); 
+   }  
+
+   &.closed{
+     transform : translateX( 100% );
+   }
+}

@@ -17,17 +17,8 @@
 $content-width: 70%;
 $stats-width: 15%;
 $contributors-width: 15%;
-
-$content-height:130px;
-$content-inner-height: $content-height - 20px;
-$title-max-height:40px;
-$paragraph-max-height:$content-inner-height - $title-max-height;
     
 .story-item{
-   display:flex;
-   flex-direction:column;
-   flex-wrap:wrap;
-   justify-content:flex-start;
    width:100%;
    padding:.5em;
    position: relative;
@@ -44,38 +35,33 @@ $paragraph-max-height:$content-inner-height - $title-max-height;
 
  }
       
+           
+ ul.tags{
+     position:relative;
+ }
+ 
  @media(min-width: $screen-xl-min){ 
 
     .story-item{
-       height:$content-height;
+     
 	     padding-bottom:10px;
     }
     
-    .inline-stat-container {
-      width:15%;
-      max-height:$content-inner-height; 
-    }
-
-     
-    .user-icon-container{
-      width:15%;
-    }
- 
-    .center{
-      width:70%;
-      padding:2px 6px;    
+    .story-item-content{
+      width:80%;
+      display: inline-block;
     } 
-       
-
-    .center-title-container{
-      max-height:$title-max-height;
-      @extend .center;    
-    }
     
+    
+    .inline-stat-container.stacked {
+      width:18%;
+      display: inline-block;
+     }
+        
     .center-content-container{
       padding-top:0;
       padding-bottom:0; 
-      max-height:$paragraph-max-height;
+     
       text-overflow: ellipsis;
       font-size:1.4rem;
       line-height: 2rem;
@@ -96,25 +82,12 @@ $paragraph-max-height:$content-inner-height - $title-max-height;
       width: 98%;
     }
     
-    .center-title-container{
-      order:-2;
-     } 
+   
     
     .first.inline-stat-container{
        display: block;
        margin:.2em 0;
-       order:-1;
      }
-     
-     ul.tags{
-       position:relative;
-       order:0;
-    }
-    
-    .second.inline-stat-container{
-      order:1;
-    }
-  
      
   }
   

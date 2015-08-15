@@ -1,26 +1,50 @@
 <template>
 <div class="container"> 
   <div class="row">            
-  <div class="col-sm-6">      
-    	<h1> My Preferred Tags </h1>
-        
-        
-       
-        <p> Customize the stories you see </p>    
-        <form submit.delegate="exlcudeTag()">
-           <select value.bind ="selectedTag ">
-             <option value="">Select a tag </option>
-             <option repeat.for="t of remainingTags " value.bind="t" >${t.text}</option>                        
-           </select>        
-           <button click.trigger="prefer(selectedTag, 5)" type="button" class="btn btn-default btn-xs"> Strong Like</button>
-           <button click.trigger="prefer(selectedTag, 3)" type="button" class="btn btn-default btn-xs"> Like </button>
-           <button click.trigger="prefer(selectedTag, 2)" type="button" class="btn btn-default btn-xs"> Dislike </button>
-           <button click.trigger="prefer(selectedTag, 1)" type="button" class="btn btn-default btn-xs"> Ban </button>
+  <div class="col-sm-8">             
+        <p> Rate tags to Customize the stories you see </p>    
+        <form submit.delegate="exlcudeTag()"  class="form-horizontal">
+            <div class="form-group">
+                <select value.bind="selectedTag" class="form-control">
+                    <option>Select a tag </option>
+                    <option repeat.for="tag of availableTags | sort:'text'" model.bind="tag" >${tag.text}</option>                        
+                </select>  
+
+                <div class="btn-group btn-group-justified">
+                    <a click.delegate="prefer(selectedTag, 5)" type="button" class="btn btn-default btn-sm"> Strong Like</a>
+                    <a click.delegate="prefer(selectedTag, 3)" type="button" class="btn btn-default btn-sm"> Like </a>
+                    <a click.delegate="prefer(selectedTag, 2)" type="button" class="btn btn-default btn-sm"> Dislike </a>
+                    <a click.delegate="prefer(selectedTag, 1)" type="button" class="btn btn-default btn-sm"> Ban </a>
+                </div>
+            </div>
         </form>
         
-       <hr>
-       
-        <table class="table">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-xs-3 control-label">Search</label>                
+                <div class="col-xs-9">
+                    <input type="text" value.bind="tagFilter" placeholder="Search tags" class="form-control" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sortBySelect" class="col-xs-3  control-label"> Sort By: </label>
+                <div class="col-xs-5">
+                    <select id="sortBySelect" value.bind="sortBy" class="form-control">
+                        <option value="text">Tag</option>
+                        <option value="preference">Preference</option>
+                    </select>
+                </div>
+                <div class="col-xs-4">
+
+                    <select id="sortByOrder" value.bind="sortByOrder" class="form-control">
+                        <option value="ascending">Asc</option>
+                        <option value="descending">Desc</option>
+                    </select>             
+                </div>  
+            </div>                    
+        </div>
+     <hr>
+        <table class="table table-condensed">
         <thead>
         <tr>
                 <th>Tag</th>
@@ -29,21 +53,25 @@
                 
 
         </tr>
-
+            
         </thead>
-             <tr repeat.for="t of ratedTags" value.bind="t" >
+             <tr if.bind="pageOfTags" repeat.for="t of pageOfTags"  >
                  <td>${t.text}</td>
                  <td>
-                    <i if.bind="t.preference ==  5" class="fa fa-plus green"></i>
-                    <i if.bind="t.preference >=  4" class="fa fa-plus green"></i>                 
-                    <i if.bind="t.preference >=  3" class="fa fa-plus green"></i>
+                    <i if.bind="t.preference ==  $parent.tpType.love" class="fa fa-plus green"></i>
+                    <i if.bind="t.preference ==  $parent.tpType.love" class="fa fa-plus green"></i>                 
+                    <i if.bind="t.preference ==  $parent.tpType.like" class="fa fa-plus green"></i>
                                      
-                    <i if.bind="t.preference == 2" class="fa fa-minus red"></i>                         
-                    <i if.bind="t.preference == 1" class="fa fa-ban red"></i>                                             
+                    <i if.bind="t.preference ==  $parent.tpType.dislike" class="fa fa-minus red"></i>                         
+                    <i if.bind="t.preference ==  $parent.tpType.ban" class="fa fa-ban red"></i>                                             
                  </td>
                  <td class="text-right"><button class="btn btn-default btn-xs" click.delegate="$parent.remove(t)">Remove</button></td>
              </tr>                        
         </table>
+
+        <!--         <pager items.bind="tags  | MultiSort:sortConfig sort:sortBy:'ordinalIgnoreCase':sortByOrder | sort:secondSortProp " page-of-items.two-way="pageOfTags " ></pager> -->
+        <pager items.bind="tags  | multiSort : sortConfig"  page-of-items.two-way="pageOfTags" items-per-page="10" ></pager>
+  
   </div>
   </div>
 </div>

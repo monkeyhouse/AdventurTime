@@ -7,7 +7,7 @@
 .inline-stat-values-label-base{
    font-weight: normal;
    font-size:1.3rem;
-   color:$text-color;
+   color:$text-color-light;
    white-space: normal;
 }
 
@@ -38,21 +38,8 @@
     flex-direction:row;
 }
 
-
-@media (max-width: $screen-lg-max){
-    .inline-stat{
-       .label, .value, .text{
-         color:$text-color-light;
-       }
-    }    
-}
-    
 @media(min-width: $screen-xl-min){ 
-   .inline-stat{
-      .label, .value, .text{
-         color:$text-color-dark;
-       }
-   }             
+        
 
    .inline-stat-container.stacked{
       display:block;
@@ -65,11 +52,15 @@
           .value{
               width:3em;
               text-align: right;
+              color:$text-color;
           }
-          
+          .label{
+             color:$text-color;
+          }
           .text{
              width:100%;
              text-align: center;
+             color:$text-color;
           }
       
         }

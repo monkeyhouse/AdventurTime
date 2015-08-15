@@ -2,7 +2,7 @@ import {inject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-http-client';
 
 @inject(HttpClient)
-export class Popular{
+export class Trending{
 	
     constructor(http){
 		this.http = http;
@@ -10,6 +10,15 @@ export class Popular{
 			response => 
 			{ 
 			  this.stories = response.content;
+			  
+			  
+			  //construct links			  
+			  var stories = this.stories;
+			  for(var story in stories){
+				 
+				//  var url = ...;
+				  
+			  }
 			});
 	}
     
