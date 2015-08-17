@@ -5,9 +5,15 @@
   </header>
 <!-- This is a single-column layout that wraps due to flex-wrap, thus it can be re-organized for mobile screens  -->
  <hr>
- <require from="play/browse/tags"></require>
- <tags></tags>
+ <!--<require from="play/browse/tags"></require>
+ <tags></tags>-->
 
+<input type="text" value.bind="filter">
+
+<ul>
+<li repeat.for="t of tags"> ${t.text} </li>
+</ul>
+  
 </template>
 
 <!-- to do: rename classes, use variables for breakpoints -->

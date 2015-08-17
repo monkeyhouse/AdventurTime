@@ -1,0 +1,44 @@
+/* this is a flat file of mock stories  used for standing up the ui. its like a database */
+[
+  '{{repeat(100, 300)}}', {
+      id: '{{guid()}}',
+      index : '{{index()}}',
+      title: '{{lorem(8, "words")}}',
+      summary: '{{lorem(1,"paragraphs")}}',
+      
+      picture: 'http://placehold.it/64x64',
+     
+      //metadata
+      created: '{{date(new Date(2014, 0, 1), new Date())}}',
+      published : '{{date(new Date(2014, 0, 1), new Date())}}',           
+           
+      likes : '{{integer(1,50)}}',
+      views : '{{integer(60,100)}}',
+      comments : '{{integer(1,30)}}',
+      
+      pages : '{{integer(20,80)}}',
+      endings : '{{integer(3,10)}}',
+     
+      tags: [
+        {'repeat:4': {
+             id : '{{integer(1000,10000)}}',
+             text:'{{lorem(1, "words")}}'
+          }
+        }
+      ],    
+      
+      
+      authors: [  //all contributors
+        {
+          'repeat:5': {
+            id: '{{integer(1000,10000)}}',
+            name: '{{firstName()}} {{surname()}}',
+            icon: 'http://placehold.it/32x32',
+            rank : '{{index()}}'
+          }
+        }
+      ]
+    }
+
+ 
+]

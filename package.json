@@ -51,6 +51,7 @@
       "aurelia-animator-css": "github:aurelia/animator-css@^0.14.1",
       "aurelia-binding": "github:aurelia/binding@^0.8.3",
       "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.15.0",
+      "aurelia-breeze": "github:jdanyow/aurelia-breeze@^0.8.0",
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.9.1",
       "aurelia-event-aggregator": "github:aurelia/event-aggregator@^0.6.2",
       "aurelia-fetch-client": "github:aurelia/fetch-client@^0.1.1",
@@ -71,6 +72,7 @@
       "aurelia-templating-resources": "github:aurelia/templating-resources@^0.13.2",
       "aurelia-templating-router": "github:aurelia/templating-router@^0.14.1",
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
+      "breeze": "npm:breeze-client@^1.5.5",
       "core-js": "npm:core-js@^0.9.4",
       "css": "github:systemjs/plugin-css@^0.1.11",
       "fetch": "github:github/fetch@^0.9.0",
@@ -78,7 +80,8 @@
       "jquery": "npm:jquery@^2.1.4",
       "lodash": "npm:lodash@^3.10.0",
       "moment": "github:moment/moment@^2.10.6",
-      "numeral": "npm:numeral@^1.5.3"
+      "numeral": "npm:numeral@^1.5.3",
+      "q": "npm:q@^1.4.1"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",

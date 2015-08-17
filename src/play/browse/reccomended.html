@@ -1,0 +1,10 @@
+<template>
+     <div class="fluid-container">
+            <br />
+        <div class="story-tiles">
+            <compose repeat.for="story of stories" class="story-tile-container compact"
+                 view="tiles/story-tile-compact.html" view-model.bind="story" ></compose>
+           
+        </div>     
+     </div>
+</template>

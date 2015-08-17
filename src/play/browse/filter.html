@@ -1,0 +1,61 @@
+<template>
+<require from ="./tags"></require>
+<span class="compact-filter-row">
+        
+        Stories in 
+        
+        <span class="categories-inline">
+                <!--option show for top show.if -->
+                <span show.bind = "showCategories" >
+                    
+                <select class="select-inline" value.bind="selectedCategory" change.delegate="categorySelected()">
+                        <option value="0"> Preferred Categories </option>     
+                        <option repeat.for="t of tags" value="t.value">${t.text}</option>
+                </select>  
+                </span>
+
+                <overlay class="browse-overlay" close.call="overlayClosed()">
+                <overlay-trigger>
+                        <button class="btn btn-link category-btn-link" show.bind="selectedCategory == 0">
+                                ${showCategories ? 'Edit' : 'Preferred Categories'} 
+                        </button>
+                </overlay-trigger>
+                <overlay-content> 
+                        <div style="font-style:normal">  
+                        <h1> Tag Preferences </h1>
+                        
+                        <hr/>
+                        <tags></tags>      
+                        
+                
+                        
+                        </div>
+                </overlay-content>
+                </overlay>
+                
+         
+        </span>
+        
+        <!--OR  <select> a tag </option>  (if selected, grey out preffered categories, or change text to selected category)
+             when change select to "preffered caegories"
+             option = "Preffered Catgories" or "cat1, cate2, cat3"
+             or "Select a Cagegory"   
+             action => text for zero value = "Prefferd Caegories"
+             
+             
+             if selectedValue <> 0 then for value 0 text = "Preferred categories" 
+                                    else for value 0 text "Select a Category"
+                 -->
+                 
+        
+       <!-- option show for top (show.if)-->
+        
+        <span show.bind = "showTimeFrame" >
+                from 
+                <select class="select-inline" value.bind="selectedTimeFrame" change.delegate="timeSelected()">
+                     <option repeat.for="t of timeFrames" value="t.value">${t.text}</option>
+                </select>
+        </span>
+</span>
+     
+</template>

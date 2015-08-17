@@ -20,6 +20,7 @@ System.config({
     "aurelia-animator-css": "github:aurelia/animator-css@0.14.1",
     "aurelia-binding": "github:aurelia/binding@0.8.6",
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.15.0",
+    "aurelia-breeze": "github:jdanyow/aurelia-breeze@0.8.0",
     "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.9.2",
     "aurelia-event-aggregator": "github:aurelia/event-aggregator@0.6.2",
     "aurelia-fetch-client": "github:aurelia/fetch-client@0.1.2",
@@ -43,6 +44,7 @@ System.config({
     "babel": "npm:babel-core@5.8.22",
     "babel-runtime": "npm:babel-runtime@5.8.20",
     "bootstrap": "github:twbs/bootstrap@3.3.5",
+    "breeze": "npm:breeze-client@1.5.5",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.13",
     "fetch": "github:github/fetch@0.9.0",
@@ -51,6 +53,7 @@ System.config({
     "lodash": "npm:lodash@3.10.1",
     "moment": "github:moment/moment@2.10.6",
     "numeral": "npm:numeral@1.5.3",
+    "q": "npm:q@1.4.1",
     "github:aurelia/animator-css@0.14.1": {
       "aurelia-metadata": "github:aurelia/metadata@0.7.3",
       "aurelia-templating": "github:aurelia/templating@0.13.16"
@@ -179,6 +182,11 @@ System.config({
       "aurelia-task-queue": "github:aurelia/task-queue@0.6.2",
       "core-js": "npm:core-js@0.9.18"
     },
+    "github:jdanyow/aurelia-breeze@0.8.0": {
+      "aurelia-binding": "github:aurelia/binding@0.8.6",
+      "aurelia-http-client": "github:aurelia/http-client@0.10.3",
+      "breeze": "npm:breeze-client@1.5.5"
+    },
     "github:jspm/nodelibs-process@0.1.1": {
       "process": "npm:process@0.10.1"
     },
@@ -204,6 +212,9 @@ System.config({
     },
     "npm:numeral@1.5.3": {
       "fs": "github:jspm/nodelibs-fs@0.1.2"
+    },
+    "npm:q@1.4.1": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
     }
   }
 });

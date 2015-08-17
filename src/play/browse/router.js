@@ -28,23 +28,16 @@ export class Router{
           // 
            
           
-          { route: ['','trending'],       name: 'trending',     moduleId: './trending',   nav: 1, title:'Trending' } 
-         ,{ route: 'newest',     name: 'newest',   moduleId: './newest',   nav: 2, title:'Newest' } 
-         ,{ route: 'reccomended',        name: 'reccomended',      moduleId: './reccomended',      nav: 4, title:'Reccomended' }
-         
-         
-        ,{ route: 'details',        name: 'details',      moduleId: './story-detail', 
-                 nav: true, title:'Details' }
+          { route: ['','hot'],       name: 'hot',     moduleId: './hot',   nav: 1, title:'Hot' } 
+         ,{ route: 'new',     name: 'new',   moduleId: './new',   nav: 2, title:'New' } 
+         ,{ route: 'top',     name: 'top',   moduleId: './top',   nav: 3, title:'Top' } 
+         ,{ route: 'reccomended',        name: 'reccomended',      moduleId: './reccomended', nav: 4, title:'Reccomended' }
+                  
+         ,{ route: 'details',        name: 'details',      moduleId: './story-detail', nav: true, title:'>> Details' }
         
         ]);
 
         this.router = router;
     } 
-        
-    isOpen = false;
-    
-    
-    isOpenChanged(propertyName, newValue, oldValue){
-      console.log("changed is called");      
-    }
+
 }

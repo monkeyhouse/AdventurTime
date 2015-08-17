@@ -1,25 +1,30 @@
 <template>
     
-    <require from="./../../formatters/valueConverters"></require>
-    <section>
-         <h2>${story.title}</h2>
-        
-         
-         <p>${story.summary}</p>
-         
+    <div class="col-xs-12 col-md-7">
+         <h2>${story.title}</h2>         
+         <p>${story.summary}</p>         
     
          <ul class="list-inline ">
+            <li>Published ${story.published | dateFromToday }
+            <li>
+            <li>${story.likes} Likes
             <li>${story.views} Views
             <li>${story.comments} Comments
-            <li>${story.likes} Likes
-            <li>Published ${story.published | dateFromToday }
+      
          </ul>
          
-     
+        <ul class="list-inline ">
          
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">dolor </a></li>
+            <li><a href="#">a sit</a></li>
+            <li><a href="#">Nueve ictorius</a></li>
+            <li><a href="#">Epentium</a></li>
+    
+        </ul>
          
          <button type="button" class="btn btn-primary btn-large" style="font-size:2em">Play Now </button>
-         
+         <button type="button" class="btn btn-link btn-large" style="font-size:1.5em">Preview </button>         
          
          
          
@@ -31,5 +36,5 @@
              
          <!-- asdf -->
      
-     </section>
+    </div>
 </template>

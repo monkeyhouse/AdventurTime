@@ -1,0 +1,44 @@
+<template>
+	<h2>Search</h2>
+	<p> Search by one or more of these fields </p>
+	<form class="horizontal">
+		
+		<div class="form-group">			
+			<label for="title" class="col-xs-3 control-label">Title</label>                
+			<div class="col-xs-9">
+				<input type="text" value.bind="title" placeholder="Title should contain" class="form-control" id="title" >
+				<!-- title should contain this text -->
+			</div>
+		</div>
+
+		<div class="form-group">			
+			<label for="summary" class="col-xs-3 control-label">Summary</label>                
+			<div class="col-xs-9">
+				<input type="text" value.bind="summary" placeholder="Summary should contain" class="form-control" >
+				<!-- summary should contain this text -->
+			</div>
+		</div>
+
+		<div class="form-group">			
+			<label for="tags" class="col-xs-3 control-label">Tags</label>                
+			<div class="col-xs-9">
+				<input type="text" value.bind="tags" placeholder="Select Tags" class="form-control" >
+				<!-- story should have these tags -->
+				<!-- should be a selectize style mutli select with autocomplete ( server side json ) -->
+			</div>
+		</div>
+		
+		<div class="form-group">			
+			<label for="inputEmail3" class="col-xs-3 control-label">Authors</label>                
+			<div class="col-xs-9">
+				<input type="text" value.bind="tagFilter" placeholder="Select Authors" class="form-control" >
+				<!-- story should have these authors -->
+				<!-- should be a selectize style mutli select with autocoplete ( server side json ) -->
+			</div>
+		</div>
+				
+		<button type="submit" class="btn btn-primary"> Search </button>
+	</form>
+	
+	
+</template>

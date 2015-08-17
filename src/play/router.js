@@ -21,7 +21,9 @@ export class PRouter{
         //  ,{ route: 'recent',       name: 'recent',     moduleId: './recent',     nav: true, title:'recent' }  //newest?
          ,{ route: 'completed',     name: 'completed',   moduleId: './completed',   nav: true, title:'Completed' } 
          ,{ route: 'favorites',        name: 'favorites',      moduleId: './favorites',      nav: true, title:'Favorites' }
-         ,{ route: 'search',        name: 'search',      moduleId: './search',      nav: true, title:'Search' } 
+         ,{ route: 'search',        name: 'search',      moduleId: './search/basic',      nav: true, title:'Search' } 
+         ,{ route: 'search-adv',    name: 'search-adv',      moduleId: './search/detailed',      nav: false, title:'Advanced Search' } 
+
         ]); 
 
         this.router = router;

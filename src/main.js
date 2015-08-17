@@ -6,6 +6,7 @@ export function configure(aurelia) {
     .plugin('aurelia-animator-css')
     .feature('components')
     .feature('formatters');
+  //  .plugin('aurelia-breeze') ;
     
   aurelia.start().then(a => a.setRoot());
 }
