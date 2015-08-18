@@ -1,79 +1,60 @@
 import {HttpClient} from 'aurelia-http-client';
-import {inject} from 'aurelia-framework';
+import {inject, computedFrom} from 'aurelia-framework';
 import _ from 'lodash';
 import breeze from 'breeze';
+import {StoriesDataService} from './../../data/StoriesDataService';
+import {Router} from 'aurelia-router';
 
+@inject(StoriesDataService, Router)
 export class Basic{
 	
-	constructor(){
-		
-	}
-}
-
-
-
-// created to search server for results
-@inject(HttpClient)
-export class StoriesSearch{
+	searchText = '';
+	sr = {};
+	_page = 1;
 	
-	constructor(http){
-		this.http = http;
+	constructor(dbService, router){
+		this.dbService = dbService;
+		this.router = router;
 	}
 	
-	//basic search : seaches title & summary for results
-	//returns : search result with of stories
-	basicSearch( searchTerm ){
-		
+	activate(params){		
+		if (params.page !== undefined && params.searchTerm !== undefined){
+			this._searchText = params.searchTerm;
+			this._page = params.page;
+		}
 	}
 	
-	advancedSearch( title, summary, tags, users){
-		
+	_searchText = '';
+	search(){			
+		this._searchText = this.searchText || '';
+		this.execSearch( this._searchText );		
 	}
 	
-}
 
-@inject(HttpClient)
-export class StoriesJsonData{
-	constructor(http){
-		this.http = http;
+	set page(value){		
+		this._page = value;		
+		this.execSearch( this._searchText , value);
+	}
 	
-	}	
+	@computedFrom('_page')
+	get page(){
+		return this._page;
+	}
 	
-	searchStories( searchTerm ){
-		  // http.get('/json/stories.json').then(
-			// response => 
-			// { 
-			//   this.stories = response.content;
-			  
-	    //var qText = searchTerm.toUpperCase();		
-		var reg = new RegExp(searchTerm.trim(), 'i');
+	execSearch( searchTerm, page = 1){
+		var stories = this.dbService.search( searchTerm, page );		
 		
-		return this.http.get('/json/stories_search').then(
-			response => {
-								
-			return response.filter( t => {	return reg.test(t.title) || reg.test(t.summary); });				               
+		stories.then(
+			searchResult => { 
+				this.sr = searchResult;
+				this._page = searchResult.page;
+				this.stories = searchResult.items;
+			}
+		)
 				
-		});
-	}
-	
-	searchStoriesAdv( titleSearchTerm, summarySearchTerm, authorIDs, tagIDs){
 		
-		var regTitle = new RegExp((titleSearchTerm || '').trim(), 'i');
-		var regSummary = new RegExp((summarySearchTerm || '').trim(), 'i');
-		// 
-		// var filter = story => ({
-		// 	if ()
-		// 	titleSearchTerm == '' ?
-		// });
-		
-			
-		var query = new breeze.EntityQuery();
-		
-		return this.http.get('/json/manyStories').then(
-			response => 			
-			 {
-				return response.filter( t => true);
-			});
+		$('.page-host').scrollTop(0);
+		//this.router.navigate("/play/search", {page : value, searchTerm : this._searchText  });		
 	}
 }
 

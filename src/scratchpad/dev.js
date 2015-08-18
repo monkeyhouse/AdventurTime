@@ -3,17 +3,18 @@ import _ from 'lodash';
 // import $ from 'jquery';
 import {inject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-http-client';
-import q from 'q';
 import breeze from 'breeze';
+import {StoriesDataService} from './../data/StoriesDataService';
 
 //dataservice
-@inject(breeze, HttpClient)
+@inject(breeze, HttpClient, StoriesDataService)
 export class Dev{
 	
 	tags = [];
 	
-	constructor(breeze, http){
+	constructor(breeze, http, sds){
 		
+		sds.loadStories();
 		
 		this.stories = [{title:'default title'}];
 		
@@ -25,8 +26,8 @@ export class Dev{
 		this.FilterQueryOp = breeze.FilterQueryOp;
 		this.Predicate = breeze.Predicate;
 
-	
-   		var serviceUrl = 'http://localhost:54418/breeze/Tags/';
+  	 	var baseUrl = 'http://localhost:49120/'
+   		var serviceUrl = baseUrl + 'breeze/Tags/';
 	
 
 			// create a manager to execute queries

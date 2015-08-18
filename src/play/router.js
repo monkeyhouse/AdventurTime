@@ -1,4 +1,4 @@
-export class PRouter{
+export class Router{
     heading = 'Play Stories';
     //Read & Play Stories .. you're a protagonist
 

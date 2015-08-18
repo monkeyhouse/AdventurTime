@@ -1,0 +1,15 @@
+<template>
+	
+	<!--<span show.bind="pages == 0"> No Pages </span>-->
+	 
+	
+	 
+	<span>
+		<ul show.bind="pages > 1" class="list-inline">	
+			<li show.bind="pages > 0"> Page ${page} of ${pages} </li>
+			<li><a class="btn btn-link ${isFirst? ' disabled ' : ''}" click.delegate="previous()"> << Previous  </a>
+			<li><a class="btn btn-link ${isLast? ' disabled ': ''} " click.delegate="next()"> Next >>  </a>
+		</ul>
+	</span>							
+	
+</template>

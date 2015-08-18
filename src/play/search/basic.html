@@ -1,13 +1,50 @@
 <template>		
 	
+	<div class="container">
 	<!--todo get icon on here-->
-	<input type="search">	
+	
+	<form class="panel text-center" submit.delegate="search()">
+	<div class="form-group panel-body">			
+		<div class="row">
+			<div class="col-md-offset-2 col-xs-10 col-md-7 col-lg-5 input-group">
+			
+			<input type="text" value.bind="searchText" placeholder="Search for stories" class="form-control input-lg" >
+			
+			<span class="input-group-btn">		.
+				<button class="btn btn-default btn-lg" type="submit"><i class="fa fa-search"></i></button>
+			</span>
+							
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-2 col-xs-10 col-md-7 col-lg-5 input-group">		
+				<div class="help-block small pull-left">Search for stories by title and summary</div>
+				<button class="btn btn-link pull-right">Advanced Search</button>
+			</div>
+
+		</div>
+	</div>			
+	</form>
+	<div class="small" show.bind="sr.pages > 0">Page ${page} of ${sr.pages}</div>
+
+
 	<!--subtext : search for stories by title and subject-->
 	
-	<button class="btn btn-link">Advanced Search</button>
+	<div class="panel">		
 	
-	<hr>
+		<div class="panel-body" repeat.for="s of stories">
+			<strong>${s.Title}</strong>
+			${s.Summary}
+		</div>
+	</div>
 	
+	<div class="panel">		
 	<!-- search results -->
+		<pager-server page.two-way="page" pages.bind="sr.pages" items-count.bind="sr.itemCount">
+		</pager-server>
+
+	</div>
 	
+	
+	</div>
 </template>
